@@ -22,8 +22,6 @@ class c_pendapatan extends CI_Controller {
 		$this->load->view('template/footer'); 
 	 }
 	 function inputPendapatan(){
-	
-	 	
 	   $this->load->view('template/header');
 	   $this->load->view('admin/input_pendapatan');
 	   $this->load->view('template/footer');
