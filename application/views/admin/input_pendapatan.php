@@ -30,7 +30,7 @@
       </li>
     </ul>
   </header>
-  <div class="app-body">
+   <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav">
@@ -43,7 +43,6 @@
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
-        </li>
         </li>
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
@@ -61,55 +60,47 @@
           </li>  <!-- kelola pesanan dan treatment syifa -->
           <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
-            <ul class="nav-dropdown-items"> 
-          <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_pendapatan/viewPendapatan');?> "><i class="fa fa-home"></i> pendapatan </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="'/c_pendapatan/viewPendapatan'"><i class="fa fa-share"></i> Pendapatan</a>
               </li>
-           <!-- pendapatan udh diubah Elsa -->
-  
+              <li class="nav-item">
+                <a class="nav-link" href="'/c_pengeluaran/viewPengeluaran'" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+              </li>
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
     <!-- Main content -->
     <main class="main">
-      
       <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
         <li class="breadcrumb-item active">Pendapatan</li>
-
         <!-- Breadcrumb Menu-->
-      </ol>
-      <!-- /.conainer-fluid -->
-     
-      <!-- /.conainer-fluid -->
-      <div class="container-fluid">
-        <div class="card card-accent-success">          
+      </ol>  
+      <div class="col-md-12">
+        <div class="card">
           <div class="card-header">
-            <h3 class="panel-title pull-left">  Pendapatan </h3>
-            <a href="<?php echo base_url('c_pendapatan/inputPendapatan')?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"> </i> tambah data </a>
+            <h5> </i> Tambah Pendapatan </h5>
           </div>
-          </div>
-          <!-- <div class="pull-center"> -->
           <div class="card-body">
-                <table id="dataPengeluaran" class="table ">
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th>Kode</th>
-                    <th>Tanggal</th>
-                    <th>Keterangan</th>
-                    <th>Jumlah</th>
-                    <th>Aksi</th>
-                  </tr>
-                </thead>
-                 <!--  Halaman Tambah-->
-                 <!-- <div class="panel-body">
+            <div class="row">
+              <div class="col-md-9">              
+                
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <form action="<?php echo base_url(). 'c_pendapatan/addPendapatan'; ?>" enctype="multipart/form-data" method="post">
+                      <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+                      <div class="row">
+                        <div class="col-md-6">                       
+                          <div class="form-group">
+                            <!-- <label class="control-label">Nama</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="nama" value="" required>
+                            </div> -->
+                            <div class="panel-body">
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -123,13 +114,13 @@
                                                     <label>Kode</label>
                                                     <input class="form-control" name="kode" placeholder="Input Kode" />
                                                 </div>
-                                                <div>
-                                                    <label>Keterangan</label>
-                                                    <textarea class="form-control" rows="3" name="ket"></textarea>
-                                                </div>
                                                 <div class="form-group">
                                                     <label>Tanggal</label>
                                                     <input class="form-control" type="date" name="tgl" />
+                                                </div>
+                                                <div>
+                                                    <label>Keterangan</label>
+                                                    <textarea class="form-control" rows="3" name="ket"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Jumlah</label>
@@ -137,15 +128,14 @@
                                                 </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                             <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <!-- <div class="panel-body">
                                 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -175,66 +165,44 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                                 <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
-                                                </form>
+                                                </form> -->
 
-                   <!-- Halaman Ubah
-                            <div class="panel-body">
-                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">Form Ubah Data</h4>
-                                            </div>
-                                            <div class="modal-body" id="modal_edit">
-                                                <form role="form" method="POST">
-                                                    <div class="form-group">
-                                                        <label>Kode</label>
-                                                        <input class="form-control" name="kode" placeholder="Input Kode" id="kode" readonly />
-                                                    </div>
-                                                    <div>
-                                                        <label>Keterangan</label>
-                                                        <textarea class="form-control" rows="3" name="ket" id="ket"></textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Tanggal</label>
-                                                        <input class="form-control" type="date" name="tgl" id="tgl" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Jumlah</label>
-                                                        <input class="form-control" type="number" name="jml" id="jml" />
-                                                    </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
-                                                </form>
-                <tbody> -->
-                  <?php
-                  $pendapatan_masuk = json_decode(json_encode($pendapatan), true);                  
-                  $no = 0;
-                  foreach($pendapatan_masuk as $pendapatan):
-                  $no++;
-                  ?>
-                  
-                  <tr>
-                    <td><?php  echo $no; ?></td>
-                    <td><?php  echo $pendapatan['Kode']; ?></td>
-                    <td><?php echo $pendapatan['Tanggal'];?></td> 
-                       <td><?php echo $pendapatan['Keterangan'];?></td>   
-                         <td><?php echo $pendapatan['Jumlah'];?></td>     
-                         <!-- <td><?php echo $pendapatan['aksi'];?></td>                                     -->
-                  
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-                </tbody>
-              </table>
-              
+                                                <!-- <?php 
+                    if(isset($_POST['simpan'])) {
+                        $kode = $_POST['kode'];
+                        $Tanggal = $_POST['tgl'];
+                        $Keterangan = $_POST['ket'];
+                        $Jumlah = $_POST['jml'];
+
+                        $sql = mysqli_query($pendapatan, "INSERT INTO administrasi (kode, keterangan, tgl, jumlah, jenis, keluar) VALUES ('$Kode', '$Keterangan', '$Tanggal', '$Jumlah', 'masuk', 0)");
+
+                        if($sql) {
+
+                            echo "
+                                <script>
+                                alert('Data Berhasil Ditambahkan');
+                                document.location.href = '';
+                                </script>";   
+                        }
+                    }
+                ?> -->
+                         
+
+                          <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-plus">Tambah</i></button>
+                                <a class="btn btn-danger" href="<?php echo base_url('c_user/kelola_user')?>"><i class="fa fa-close"></i> Batal</a>
+                              </div>
+                            </div>                          
+                        </div>                      
+                      </div>                      
+                    </form>
+                    </div>  <!-- end form-horizontal -->
+                    </div> <!-- end panel-body -->
+                  </div>
+                </div>
+              </div>
             </div>
-    </div>
-  </div>
-</div>
-</main>
-</div>
+          </div>
+        </main>
+      </div>

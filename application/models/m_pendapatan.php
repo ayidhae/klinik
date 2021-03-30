@@ -9,7 +9,10 @@ class m_pendapatan extends CI_Model {
     return $this->db->get('pendapatan');
    
 }
-  
+function insert_pendapatan($data){
+  $query = $this->db->insert('pendapatan',$data);
+  return $query;
+}
   
 
   //   return $this->db->query("SELECT * FROM pendapatan ORDER BY tanggal DESC");

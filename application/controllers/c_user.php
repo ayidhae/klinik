@@ -29,7 +29,7 @@ class c_user extends CI_Controller {
 function inputUser(){
 	
 	 	
-         $this->load->view('template/header');
+        $this->load->view('template/header');
 		$this->load->view('admin/input_user');
 		$this->load->view('template/footer');
     }  

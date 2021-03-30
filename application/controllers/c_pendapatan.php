@@ -21,6 +21,28 @@ class c_pendapatan extends CI_Controller {
 		$this->load->view('admin/view_pendapatan',$data);
 		$this->load->view('template/footer'); 
 	 }
+	 function inputPendapatan(){
+	
+	 	
+	   $this->load->view('template/header');
+	   $this->load->view('admin/input_pendapatan');
+	   $this->load->view('template/footer');
+   }  
+
+   function addPendapatan(){
+	$Kode = $this->input->post('kode');
+	$Tanggal = $this->input->post('tanggal');
+	$Keterangan = $this->input->post('keterangan');
+	$Jumlah = $this->input->post('jumlah');
+	$data = array(
+		'kode' => $Kode,
+		'Tanggal' => $Tanggal,
+		'keterangan' => $Keterangan,
+		'jumlah' => $Jumlah
+		);
+	$this->m_pendapatan->insert_pendapatan($data,'pendapatan');
+	redirect('c_pendapatan/viewPendapatan');
+}
 
 // 	public function viewProgress_direktur(){
 // 		$data ['progress'] = $this->m_progress->viewProgress()->result();

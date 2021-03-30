@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 11:00 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Waktu pembuatan: 30 Mar 2021 pada 15.24
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pasien`
+-- Struktur dari tabel `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -41,7 +41,29 @@ CREATE TABLE `pasien` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `pendapatan`
+--
+
+CREATE TABLE `pendapatan` (
+  `No.` int(25) NOT NULL,
+  `Kode` int(25) NOT NULL,
+  `Tanggal` date NOT NULL,
+  `Keterangan` text NOT NULL,
+  `Jumlah` int(25) NOT NULL,
+  `Id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pendapatan`
+--
+
+INSERT INTO `pendapatan` (`No.`, `Kode`, `Tanggal`, `Keterangan`, `Jumlah`, `Id`) VALUES
+(1, 1, '2021-03-31', 'masuk', 1000000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -53,24 +75,31 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `hak_akses`, `nama`, `no_hp`) VALUES
-('ay', '12345', 'admin', 'ay', '54');
+('ay', '12345', 'admin', 'ay', '54'),
+('elsasinaga', '123456', 'admin', 'elsa', '0813333');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `pasien`
+-- Indeks untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `pendapatan`
+--
+ALTER TABLE `pendapatan`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
