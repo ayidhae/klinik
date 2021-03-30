@@ -215,18 +215,18 @@
                         </div> -->
                 <!-- <tbody>
                 <?php
-                  $pengeluaran_keluar = json_decode(json_encode($pengeluaran), true);                  
+                  $pengeluaran = json_decode(json_encode($pengeluaran), true);                  
                   $no = 0;
-                  foreach($pengeluaran_keluar as $pengeluaran):
+                  foreach($pengeluaran as $user):
                   $no++;
                   ?>
                   
                   <tr>
-                    <td><?php  echo $no; ?></td>
-                    <td><?php  echo $pengeluaran['Kode']; ?></td>
-                    <td><?php echo $pengeluaran['Tanggal'];?></td> 
-                       <td><?php echo $pengeluaran['Keterangan'];?></td>   
-                         <td><?php echo $pengeluaran['Jumlah'];?></td>     
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $user['Kode']; ?></td>
+                    <td><?php echo $user['Tanggal'];?></td> 
+                       <td><?php echo $user['Keterangan'];?></td>   
+                         <td><?php echo $user['Jumlah'];?></td>     
                          <!-- <td><?php echo $pengeluaran['aksi'];?></td>                                     -->
                   
                   </tr>
