@@ -82,66 +82,71 @@
     <main class="main">
       <!-- Breadcrumb -->
    
-        
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active">kelola pasien</li>
+
         <!-- Breadcrumb Menu-->
       </ol>
-      
-     <!--  
       <div class="container-fluid">
-        <H1>Data Barang</H1>
-        <body>
-          <div class="row">
-           
-            <?php foreach($barang as $detail): ?>
-              <div class="col-sm-3 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h3> <?=$detail->namabarang?></h3>
-                  </div>
-                  <div class="card-body">
-                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
-                  <div> 
-                    <p> <?=$detail->jenis ?> </p>
-                    <p> <?=$detail->nama_perusahaan ?> </p>
-                    <p>
-                      <a  class='btn btn-primary' href="<?php echo base_url('/c_barang/detail/'.$detail->idbarang);?>"> detail </a>
-                    </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
+        <div class="card card-accent-success">
+          <div class="card-header">
+            <h3>  Kelola Pasien </h3>
           </div>
-        </body>
-        </div>
-
-
-</main>
-</div>
-</body>
+          <div class="card-body">
+            
+            <div>
+              
+              <table id="dataCustomer" class="table ">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>hak akses</th>
+                    <th>Nama</th>
+                     <th>Alamat</th>
+                     <th>contact</th>
+                      <th>email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  $customer_user = json_decode(json_encode($pasien), true);                  
+                  $no = 0;
+                  foreach($customer_user as $user):
+                  $no++;
+                  ?>
+                  
+                  <tr>
+                     <td><?php  echo $no; ?></td>
+                    <td><?php  echo $user['hak_akses']; ?></td>
+                    <td><?php  echo $user['nama']; ?></td>
+                    <td><?php  echo $user['alamat']; ?></td>
+                    <td><?php  echo $user['contact']; ?></td>
+                    <td><?php  echo $user['email']; ?></td>
+                    <td><?php echo $user['username'];?></td> 
+                       <td><?php echo $user['password'];?></td>   
+                         <td><?php echo $user['status'];?></td>
+                       
+                       
+                  </tr>
+                  <?php
+                  endforeach;
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </body>
       </div>
-      
-    </main>
-  </div>
-  
-  <!-- /.conainer-fluid -->
+    
+              
+             
+        
 </main>
 </div>
-<!--Start of Tawk.to Script-->
-<!--  <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ac440b44b401e45400e5212/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script> -->
-<!--End of Tawk.to Script-->
 </body>
 </body>
 </div>

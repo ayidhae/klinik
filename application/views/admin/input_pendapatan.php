@@ -88,7 +88,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-9">              
-                
+              
                 <div class="panel-body">
                   <div class="form-horizontal">
                     <form action="<?php echo base_url(). 'c_pendapatan/addPendapatan'; ?>" enctype="multipart/form-data" method="post">

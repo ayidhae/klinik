@@ -12,7 +12,7 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_user/homeAdmin');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -24,13 +24,13 @@
           <div class="dropdown-header text-center">
             <strong>Account</strong>
           </div>
-          <a class="dropdown-item" href="<?php echo base_url('/c_user/form_update');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
+          <a class="dropdown-item" href="<?php echo base_url('/c_user/viewProfile');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
           <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
     </ul>
   </header>
-   <div class="app-body">
+  <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav">
@@ -44,11 +44,18 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
         </li>
+         <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user"></i>Kelola User</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_user');?>"><i class="fa fa-user"></i> User Internal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_pasien');?>" > <i class="fa fa-user"></i> User Pasien</a> <!-- elsa -->
+              </li>
+        </ul>
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>
           </li>
           </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
@@ -62,10 +69,10 @@
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
             <ul class="nav-dropdown-items">   
               <li class="nav-item">
-                <a class="nav-link" href=""><i class="fa fa-share"></i> Pendapatan</a>
+                <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
               </li>
         </ul>
       </nav>
@@ -74,12 +81,14 @@
     <!-- Main content -->
     <main class="main">
       <!-- Breadcrumb -->
-      <ol class="breadcrumb">
+   
+     <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Kelola user</a></li>
-        <li class="breadcrumb-item active">Tambah User</li>
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active">input user</li>
+
         <!-- Breadcrumb Menu-->
-      </ol>  
+      </ol>
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
