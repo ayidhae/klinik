@@ -74,121 +74,85 @@
     <!-- Main content -->
     <main class="main">
       
+     
       <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Kelola User</li>
-
+        <li class="breadcrumb-item active">Edit User</li>
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- /.conainer-fluid -->
-  
-<div class="container-fluid">
-        <div class="card card-accent-success">
+<?php foreach($user as $detail): ?>
+      <div class="col-md-12">
+        <div class="card">
           <div class="card-header">
-            <h3>  Kelola Pasien </h3>
-            
-          </div>
+           <h3 class="panel-title pull-left">Edit User</h3>
+            <a href="<?php echo site_url('/c_user/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
+        </div>
           <div class="card-body">
-          
-              <table id="dataVendor" class="table ">
-                <thead>
-                  <tr>
-                  <th>No</th>
-                    <th>hak akses</th>
-                    <th>Nama</th>
-                     <th>Alamat</th>
-                     <th>contact</th>
-                      <th>email</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                
-                  <?php
-                  $vendor_user = json_decode(json_encode($pasien), true);
-                  $no = 0;
-                  foreach($vendor_user as $user):
-                  $no++;
-                  ?>
-                  
-                  <tr>
-                    td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['hak_akses']; ?></td>
-                    <td><?php  echo $user['nama']; ?></td>
-                    <td><?php  echo $user['alamat']; ?></td>
-                    <td><?php  echo $user['contact']; ?></td>
-                    <td><?php  echo $user['email']; ?></td>
-                    <td><?php echo $user['username'];?></td> 
-                       <td><?php echo $user['password'];?></td>   
-                         <td><?php echo $user['status'];?></td>
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-                </tbody>
-              </table>
+            <div class="row">
+              <div class="col-md-9">
+                <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <form action="<?php echo base_url(). 'c_user/update_user/'.$detail->username; ?>" method="post">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Nama</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->nama ;?>">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="sel1" >Hak akses</label>
+                            <select name="hak_akses" class="form-control" id="sel1" value="<?php echo $detail->hak_akses ;?>">
+                            <option value="admin">admin</option>
+                            <option value="manajer">Manajer</option>
+                            <option value="dokter">dokter</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">Username</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="username" value="<?php echo $detail->username ;?>">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="password" value="<?php echo $detail->password ;?>">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">no hp</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="no_hp" value="<?php echo $detail->no_hp 
+                              ;?>">
+                            </div>
+                          </div>
+                          
+                          
+                         
+                           <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                             <a href=""><button class="btn btn-primary"> <i class="fa fa-pencil">Simpan</i></button></a>
+                              <a href="<?php echo base_url('c_admin/kelola_user')?>" class="btn btn-danger"> Batal </a>
+                            </div>
+                          </div>
+
+                        
+                      
+                      <?php endforeach; ?>
+                    </form>
+                    </div>  <!-- end form-horizontal -->
+                    </div> <!-- end panel-body -->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-      </div>
-
-<div class="container-fluid">
-        <div class="card card-accent-success">
-          <div class="card-header">
-            <h3>  Kelola Internal  </h3>
-             <a href="<?php echo base_url('c_user/inputUser')?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"> </i> tambah data </a>
-          </div>
-          <div class="card-body">
-            
-            <div>
-              
-              <table id="dataCustomer" class="table ">
-                <thead>
-                  <tr>
-                     <th>No</th>
-                    <th>Nama</th>
-                     <th>hak_akses</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>No hp</th>
-                    <th>action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $customer_user = json_decode(json_encode($user), true);                  
-                  $no = 0;
-                  foreach($customer_user as $user):
-                  $no++;
-                  ?>
-                  
-                  <tr>
-                    <td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['nama']; ?></td>
-                        <td><?php  echo $user['hak_akses']; ?></td>
-                    <td><?php echo $user['username'];?></td> 
-                       <td><?php echo $user['password'];?></td>   
-                         <td><?php echo $user['no_hp'];?></td>                                       
-                    <td>  
-                       
-                        <a href="<?php echo base_url('/c_user/edit_user/'.$user['username']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
-                        
-                        
-
-                    </td>
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-                </tbody>
-              </table>
-              
-            </div>
-    </div>
-  </div>
-</div>
+      
 </main>
 </div>
