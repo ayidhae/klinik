@@ -26,6 +26,30 @@ class c_user extends CI_Controller {
 		$this->load->view('template/footer');	
 	}
 
+function inputUser(){
+	
+	 	
+         $this->load->view('template/header');
+		$this->load->view('admin/input_user');
+		$this->load->view('template/footer');
+    }  
+    function addUser(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$hak_akses = $this->input->post('hak_akses');
+ 		$nama = $this->input->post('nama');
+ 		$no_hp = $this->input->post('no_hp');
+		$data = array(
+			'username' => $username,
+			'password' => $password,
+			'hak_akses' => $hak_akses,
+			'nama' => $nama,
+			'no_hp' => $no_hp
+			);
+		$this->m_user->insert_user($data,'user');
+		redirect('c_user/kelola_user');
+	}
+	
 
 	//untuk direktur
 	public function viewProfil(){

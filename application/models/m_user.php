@@ -14,7 +14,12 @@ class m_user extends CI_Model {
          return $this->db->get('user');
         
     }
-	
+    function insert_user($data){
+        $query = $this->db->insert('user',$data);
+        return $query;
+    }
+
+
 	function cek($username, $password){
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);

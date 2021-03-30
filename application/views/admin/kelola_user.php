@@ -88,12 +88,14 @@
         <div class="card card-accent-success">
           <div class="card-header">
             <h3>  Kelola Pasien </h3>
+             <a href="<?php echo base_url('c_user/inputUser')?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"> </i> tambah data </a>
           </div>
           <div class="card-body">
           
               <table id="dataVendor" class="table ">
                 <thead>
                   <tr>
+                  <th>No</th>
                     <th>hak akses</th>
                     <th>Nama</th>
                      <th>Alamat</th>
@@ -119,6 +121,7 @@
                     <td><?php  echo $user['nama']; ?></td>
                     <td><?php  echo $user['alamat']; ?></td>
                     <td><?php  echo $user['contact']; ?></td>
+                    <td><?php  echo $user['email']; ?></td>
                     <td><?php echo $user['username'];?></td> 
                        <td><?php echo $user['password'];?></td>   
                          <td><?php echo $user['status'];?></td>
