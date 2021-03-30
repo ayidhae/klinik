@@ -49,7 +49,33 @@ function inputUser(){
 		$this->m_user->insert_user($data,'user');
 		redirect('c_user/kelola_user');
 	}
-	
+	public function edit_user($username){
+		$where = array('username' => $username);
+		$data['user'] = $this->m_user->detail($where,'user')->result();
+		$this->load->view('template/header');
+		$this->load->view('admin/edit_user',$data);
+		$this->load->view('template/footer');
+	}
+
+	public function update_user($username){	
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$hak_akses = $this->input->post('hak_akses');
+ 		$nama = $this->input->post('nama');
+ 		$no_hp = $this->input->post('no_hp');
+		$data = array(
+			'username' => $username,
+			'password' => $password,
+			'hak_akses' => $hak_akses,
+			'nama' => $nama,
+			'no_hp' => $no_hp
+			);
+		$where=array(
+			'username'=>$username
+			);
+		$this->m_user->updateProfile($where,$data,'user');
+		redirect(base_url('c_user/kelola_user'));		
+	}
 
 	//untuk direktur
 	public function viewProfil(){

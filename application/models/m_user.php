@@ -18,7 +18,13 @@ class m_user extends CI_Model {
         $query = $this->db->insert('user',$data);
         return $query;
     }
-
+function detail($where,$table){     
+        return $this->db->get_where($table,$where);
+    }
+     function updateProfile($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
 
 	function cek($username, $password){
 		$this->db->where('username', $username);
@@ -40,11 +46,7 @@ class m_user extends CI_Model {
         }
       }
 
-    function updateProfile($where,$data,$table){
-        $this->db->where($where);
-        $this->db->update($table,$data);
-    }
-
+    
     function getCurrentPass($username){
         $query = $this->db->where(['username'=>$username])
               ->get('user');
