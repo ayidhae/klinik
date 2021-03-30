@@ -96,7 +96,7 @@
                           <div class="form-group">
                             <label class="control-label">Kode</label>
                             <div class="">
-                              <input class="form-control" type="text" name="nama" value="" required>
+                              <input class="form-control" type="text" name="kode" value="" required>
                             </div>
                             <div class="row">
                         <div class="col-md-12">                       
