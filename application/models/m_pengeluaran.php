@@ -1,24 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_pendapatan extends CI_Model {
+class m_pengeluaran extends CI_Model {
 
 	
 
-  function getAllpendapatan(){
-    return $this->db->get('pendapatan');
+  function getAllpengeluaran(){
+    return $this->db->get('pengeluaran');
    
 }
-function insert_pendapatan($data){
-  $query = $this->db->insert('pendapatan',$data);
+function insert_pengeluaran($data){
+  $query = $this->db->insert('pengeluaran',$data);
   return $query;
-}
-function detail($where,$table){     
-  return $this->db->get_where($table,$where);
-}
-function updatePendapatan($where,$data,$table){
-  $this->db->where($where);
-  $this->db->update($table,$data);
 }
   
 

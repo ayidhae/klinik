@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_pengeluaran extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		//$this->load->model('m_progress');
+		$this->load->model('m_pengeluaran');
 		
 	}
 		 //call model
@@ -16,11 +16,31 @@ class c_pengeluaran extends CI_Controller {
 
 	public function viewPengeluaran(){
 	
-	 	//$data ['progress'] = $this->m_progress->viewProgress()->result();
+	 	$data ['pengeluaran'] = $this->m_pengeluaran->getAllpengeluaran()->result();
 	 	$this->load->view('template/header');
-		$this->load->view('admin/view_pengeluaran');
+		$this->load->view('admin/view_pengeluaran',$data);
 		$this->load->view('template/footer'); 
 	 }
+	 function inputPengeluaran(){
+		$this->load->view('template/header');
+		$this->load->view('admin/input_pengeluaran');
+		$this->load->view('template/footer');
+	}  
+ 
+	function addPengeluaran(){
+	 $Kode = $this->input->post('kode');
+	 $Tanggal = $this->input->post('tanggal');
+	 $Keterangan = $this->input->post('keterangan');
+	 $Jumlah = $this->input->post('jumlah');
+	 $data = array(
+		 'kode' => $Kode,
+		 'Tanggal' => $Tanggal,
+		 'keterangan' => $Keterangan,
+		 'jumlah' => $Jumlah
+		 );
+	 $this->m_pengeluaran->insert_pengeluaran($data,'pengeluaran');
+	 redirect('c_pengeluaran/viewPengeluaran');
+ }
 
 // 	public function viewProgress_direktur(){
 // 		$data ['progress'] = $this->m_progress->viewProgress()->result();

@@ -223,8 +223,9 @@
                     <td><?php echo $pendapatan['Tanggal'];?></td> 
                        <td><?php echo $pendapatan['Keterangan'];?></td>   
                          <td><?php echo $pendapatan['Jumlah'];?></td>     
-                         <!-- <td><?php echo $pendapatan['aksi'];?></td>                                     -->
-                  
+                         <td>
+                         <a href="<?php echo base_url('/c_pendapatan/edit_pendapatan/'.$pendapatan['Id']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+                         </td>
                   </tr>
                   <?php
                   endforeach;

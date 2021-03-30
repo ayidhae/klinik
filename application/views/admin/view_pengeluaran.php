@@ -89,17 +89,16 @@
       <!-- /.conainer-fluid -->
       <div class="container-fluid">
         <div class="card card-accent-success">          
-          <div class="card-header">
+        <div class="card-header">
             <h3 class="panel-title pull-left">  Pengeluaran </h3>
-            <span title="Tambah Data"><button style="float: right;" class="btn-md btn btn-success"data-toggle="modal" data-target="#myModal">
-            <b>+ Tambah</b>
+            <a href="<?php echo base_url('c_pengeluaran/inputPengeluaran')?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"> </i> tambah data </a>
           </div>
           <div class="pull-center">
           <div class="card-body">
                 <table id="dataPengeluaran" class="table ">
                 <thead>
                   <tr>
-                    <th>No.</th>
+                    <th>No.</th> 
                     <th>Kode</th>
                     <th>Tanggal</th>
                     <th>Keterangan</th>
@@ -109,7 +108,7 @@
                 </thead>
 
                  <!--  Halaman Tambah-->
-                 <div class="panel-body">
+                 <!-- <div class="panel-body">
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -175,9 +174,9 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                                 <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
-                                                </form>
+                                                </form> -->
                    <!-- Halaman Ubah -->
-                   <div class="panel-body">
+                   <!-- <div class="panel-body">
                                 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -213,22 +212,22 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                 <!-- <tbody>
-                  <?php
-                  $customer_user = json_decode(json_encode($pasien), true);                  
+                <?php
+                  $pengeluaran_keluar = json_decode(json_encode($pengeluaran), true);                  
                   $no = 0;
-                  foreach($customer_user as $user):
+                  foreach($pengeluaran_keluar as $pengeluaran):
                   $no++;
                   ?>
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['No.']; ?></td>
-                    <td><?php echo $user['Kode'];?></td> 
-                       <td><?php echo $user['Keterangan'];?></td>   
-                         <td><?php echo $user['Jumalah'];?></td>     
-                         <td><?php echo $user['aksi'];?></td>                                    
+                    <td><?php  echo $pengeluaran['Kode']; ?></td>
+                    <td><?php echo $pengeluaran['Tanggal'];?></td> 
+                       <td><?php echo $pengeluaran['Keterangan'];?></td>   
+                         <td><?php echo $pengeluaran['Jumlah'];?></td>     
+                         <!-- <td><?php echo $pengeluaran['aksi'];?></td>                                     -->
                   
                   </tr>
                   <?php

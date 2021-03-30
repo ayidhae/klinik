@@ -61,7 +61,7 @@
           <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
             <ul class="nav-dropdown-items">   
-            <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
               </li>
               <li class="nav-item">
@@ -83,7 +83,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h5> </i> Tambah Pendapatan </h5>
+            <h5> </i> Tambah Pengeluaran </h5>
           </div>
           <div class="card-body">
             <div class="row">
@@ -91,14 +91,14 @@
                 
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url(). 'c_pendapatan/addPendapatan'; ?>" enctype="multipart/form-data" method="post">
+                    <form action="<?php echo base_url(). 'c_pengeluaran/addPengeluaran'; ?>" enctype="multipart/form-data" method="post">
                       <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
                       <div class="row">
                         <div class="col-md-6">                       
                           <div class="form-group">
                             <label class="control-label">Kode</label>
                             <div class="">
-                              <input class="form-control" type="text" name="kode" value="" required>
+                              <input class="form-control" type="text" name="nama" value="" required>
                             </div>
                             <div class="row">
                         <div class="col-md-12">                       
@@ -151,7 +151,7 @@
                                                 </div> -->
                                         </div>
                                         <div class="modal-footer">
-                                        <a class="btn btn-danger" href="<?php echo base_url('c_pendapatan/viewPendapatan')?>"><i class="fa fa-close"></i> Batal</a>
+                                        <a class="btn btn-danger" href="<?php echo base_url('c_pengeluaran/viewPengeluaran')?>"><i class="fa fa-close"></i> Batal</a>
                                             <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
                                         </div>
                                     </div>
