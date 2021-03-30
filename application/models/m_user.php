@@ -10,6 +10,10 @@ class m_user extends CI_Model {
     function getUser($where,$table){
 		return $this->db->get_where($table,$where);
 	}
+    function getAlluser(){
+         return $this->db->get('user');
+        
+    }
 	
 	function cek($username, $password){
 		$this->db->where('username', $username);

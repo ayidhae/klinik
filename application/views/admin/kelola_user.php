@@ -12,7 +12,7 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_user/homeAdmin');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -24,7 +24,7 @@
           <div class="dropdown-header text-center">
             <strong>Account</strong>
           </div>
-          <a class="dropdown-item" href="<?php echo base_url('/c_user/viewProfile');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
+          <a class="dropdown-item" href="<?php echo base_url('/c_user/form_update');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
           <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
@@ -48,75 +48,69 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-home"></i> Kelola User</a>
           </li>
           </li>  <!-- kelola user udh diubah ayidha -->
-          
+  
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
     <!-- Main content -->
     <main class="main">
+      
       <!-- Breadcrumb -->
-   
-        
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active">Kelola User</li>
+
         <!-- Breadcrumb Menu-->
       </ol>
-      
-     <!--  
+      <!-- /.conainer-fluid -->
+     
       <div class="container-fluid">
-        <H1>Data Barang</H1>
-        <body>
-          <div class="row">
-           
-            <?php foreach($barang as $detail): ?>
-              <div class="col-sm-3 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h3> <?=$detail->namabarang?></h3>
-                  </div>
-                  <div class="card-body">
-                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
-                  <div> 
-                    <p> <?=$detail->jenis ?> </p>
-                    <p> <?=$detail->nama_perusahaan ?> </p>
-                    <p>
-                      <a  class='btn btn-primary' href="<?php echo base_url('/c_barang/detail/'.$detail->idbarang);?>"> detail </a>
-                    </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
+        <div class="card card-accent-success">
+          <div class="card-header">
+            <h3>  Kelola Customer </h3>
           </div>
-        </body>
-        </div>
-
-
-</main>
-</div>
-</body>
-          </div>
-        </body>
-      </div>
-      
-    </main>
+          <div class="card-body">
+            
+            <div>
+              
+              <table id="dataCustomer" class="table ">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>No hp</th>
+                    <th> Action </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  $customer_user = json_decode(json_encode($pasien), true);                  
+                  $no = 0;
+                  foreach($customer_user as $user):
+                  $no++;
+                  ?>
+                  
+                  <tr>
+                    <td><?php  echo $no; ?></td>
+                    <td><?php  echo $user['nama']; ?></td>
+                    <td><?php echo $user['username'];?></td> 
+                       <td><?php echo $user['password'];?></td>   
+                         <td><?php echo $user['no_hp'];?></td>                                       
+                  
+                  </tr>
+                  <?php
+                  endforeach;
+                  ?>
+                </tbody>
+              </table>
+              
+            </div>
+    </div>
   </div>
-  
-  <!-- /.conainer-fluid -->
-</main>
 </div>
-<!--Start of Tawk.to Script-->
-<!--  <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ac440b44b401e45400e5212/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script> -->
-<!--End of Tawk.to Script-->
-</body>
-</body>
+</main>
 </div>

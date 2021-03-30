@@ -19,10 +19,10 @@ class c_user extends CI_Controller {
 	}
 
 	public function kelola_user(){		
-		$data['vendor'] = $this->m_vendor->getAllVendor()->result();
-		$data['customer'] = $this->m_customer->getAllCustomer()->result();	
+		$data['user'] = $this->m_user->getAllUser()->result();
+		$data['pasien'] = $this->m_pasien->getAllPasien()->result();	
 		$this->load->view('template/header');
-		$this->load->view('logistik/kelola_user',$data);
+		$this->load->view('admin/kelola_user',$data);
 		$this->load->view('template/footer');	
 	}
 
