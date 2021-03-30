@@ -25,6 +25,13 @@ class c_user extends CI_Controller {
 		$this->load->view('admin/kelola_user',$data);
 		$this->load->view('template/footer');	
 	}
+		public function kelola_pasien(){		
+		$data['pasien'] = $this->m_pasien->getAllPasien()->result();	
+		$this->load->view('template/header');
+		$this->load->view('admin/kelola_pasien',$data);
+		$this->load->view('template/footer');	
+	}
+
 
 function inputUser(){
 	

@@ -12,7 +12,7 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_user/homeAdmin');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -24,13 +24,13 @@
           <div class="dropdown-header text-center">
             <strong>Account</strong>
           </div>
-          <a class="dropdown-item" href="<?php echo base_url('/c_user/form_update');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
+          <a class="dropdown-item" href="<?php echo base_url('/c_user/viewProfile');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
           <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
     </ul>
   </header>
-   <div class="app-body">
+  <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav">
@@ -44,11 +44,18 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
         </li>
+         <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user"></i>Kelola User</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_user');?>"><i class="fa fa-user"></i> User Internal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_pasien');?>" > <i class="fa fa-user"></i> User Pasien</a> <!-- elsa -->
+              </li>
+        </ul>
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>
           </li>
           </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
@@ -62,10 +69,10 @@
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
             <ul class="nav-dropdown-items">   
               <li class="nav-item">
-                <a class="nav-link" href=""><i class="fa fa-share"></i> Pendapatan</a>
+                <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
               </li>
         </ul>
       </nav>
@@ -73,69 +80,16 @@
     </div>
     <!-- Main content -->
     <main class="main">
-      
       <!-- Breadcrumb -->
-      <ol class="breadcrumb">
+   
+         <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Kelola User</li>
+        <li class="breadcrumb-item active">kelola user</li>
 
         <!-- Breadcrumb Menu-->
       </ol>
-      <!-- /.conainer-fluid -->
-  
-<div class="container-fluid">
-        <div class="card card-accent-success">
-          <div class="card-header">
-            <h3>  Kelola Pasien </h3>
-            
-          </div>
-          <div class="card-body">
-          
-              <table id="dataVendor" class="table ">
-                <thead>
-                  <tr>
-                  <th>No</th>
-                    <th>hak akses</th>
-                    <th>Nama</th>
-                     <th>Alamat</th>
-                     <th>contact</th>
-                      <th>email</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                
-                  <?php
-                  $vendor_user = json_decode(json_encode($pasien), true);
-                  $no = 0;
-                  foreach($vendor_user as $user):
-                  $no++;
-                  ?>
-                  
-                  <tr>
-                    td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['hak_akses']; ?></td>
-                    <td><?php  echo $user['nama']; ?></td>
-                    <td><?php  echo $user['alamat']; ?></td>
-                    <td><?php  echo $user['contact']; ?></td>
-                    <td><?php  echo $user['email']; ?></td>
-                    <td><?php echo $user['username'];?></td> 
-                       <td><?php echo $user['password'];?></td>   
-                         <td><?php echo $user['status'];?></td>
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-      </div>
-
-<div class="container-fluid">
+      <div class="container-fluid">
         <div class="card card-accent-success">
           <div class="card-header">
             <h3>  Kelola Internal  </h3>
@@ -175,8 +129,6 @@
                     <td>  
                        
                         <a href="<?php echo base_url('/c_user/edit_user/'.$user['username']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
-                        
-                        
 
                     </td>
                   </tr>
@@ -185,10 +137,15 @@
                   ?>
                 </tbody>
               </table>
-              
             </div>
-    </div>
-  </div>
-</div>
+          </div>
+      </div>
+    
+              
+             
+        
 </main>
+</div>
+</body>
+</body>
 </div>

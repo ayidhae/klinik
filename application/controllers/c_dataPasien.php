@@ -7,6 +7,7 @@ class c_dataPasien extends CI_Controller {
         $this->load->model('m_pasien');
 		              
     }
+
     function inputPasien(){
 	
 	 	
@@ -17,7 +18,7 @@ class c_dataPasien extends CI_Controller {
     function addPasien(){
     	date_default_timezone_set("Asia/Jakarta");
          $tanggal = date('Y-m-d h:i:s');
-		$hak_akses = $this->input->post('hak_akses');
+		// $hak_akses = $this->input->post('hak_akses');
 		$nama = $this->input->post('nama');
 		$alamat = $this->input->post('alamat');
 		$contact = $this->input->post('contact');
@@ -50,4 +51,4 @@ class c_dataPasien extends CI_Controller {
 		$this->load->view('admin/edit_user',$data);
 		$this->load->view('template/footer');
 	}
-
+}

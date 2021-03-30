@@ -88,7 +88,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-9">              
-                
+              
                 <div class="panel-body">
                   <div class="form-horizontal">
                     <form action="<?php echo base_url(). 'c_pendapatan/addPendapatan'; ?>" enctype="multipart/form-data" method="post">
@@ -98,7 +98,7 @@
                           <div class="form-group">
                             <label class="control-label">Kode</label>
                             <div class="">
-                              <input class="form-control" type="text" name="nama" value="" required>
+                              <input class="form-control" type="text" name="kode" value="" required>
                             </div>
                             <div class="row">
                         <div class="col-md-12">                       
