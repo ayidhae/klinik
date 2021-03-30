@@ -93,6 +93,7 @@
         <div class="card card-accent-success">
           <div class="card-header">
             <h3>  Kelola Pendapatan </h3>
+             <a href="<?php echo base_url('c_pendapatan/inputPendapatan')?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"> </i> tambah data </a>
           </div>
           <div class="card-body">
             
