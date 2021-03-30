@@ -44,10 +44,30 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
         </li>
-          <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_pengeluaran/viewPengeluaran');?> "><i class="fa fa-home"></i> pendapatan </a>
+        <li class="nav-item">
+            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
           </li>
-          </li>  <!-- Pengeluaran udh diubah Elsa -->
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+          </li>
+          </li>  <!-- kelola user dan data pasien ayidha -->
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
+          </li>
+          </li>  <!-- kelola pesanan dan treatment syifa -->
+          <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
+            <ul class="nav-dropdown-items"> 
+          <li class="nav-item">
+            <a class="nav-link" href=" <?php echo base_url('/c_pendapatan/viewPendapatan');?> "><i class="fa fa-home"></i> pendapatan </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+              </li>
+            <!-- Pengeluaran udh diubah Elsa -->
   
         </ul>
       </nav>
@@ -88,7 +108,7 @@
                   </tr>
                 </thead>
 
-                
+                 <!--  Halaman Tambah-->
                  <div class="panel-body">
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -156,6 +176,44 @@
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                                 <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
                                                 </form>
+                   <!-- Halaman Ubah -->
+                   <div class="panel-body">
+                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Form Ubah Data</h4>
+                                            </div>
+                                            <div class="modal-body" id="modal_edit">
+                                                <form role="form" method="POST">
+                                                    <div class="form-group">
+                                                        <label>Kode</label>
+                                                        <input class="form-control" name="kode" placeholder="Input Kode" id="kode" readonly />
+                                                    </div>
+                                                    <div>
+                                                        <label>Keterangan</label>
+                                                        <textarea class="form-control" rows="3" name="ket" id="ket"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tanggal</label>
+                                                        <input class="form-control" type="date" name="tgl" id="tgl" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Jumlah</label>
+                                                        <input class="form-control" type="number" name="jml" id="jml" />
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                                <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
+                                                </form>
+                                           
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 <!-- <tbody>
                   <?php
                   $customer_user = json_decode(json_encode($pasien), true);                  
