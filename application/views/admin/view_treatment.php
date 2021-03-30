@@ -47,8 +47,26 @@
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-home"></i> Kelola User</a>
           </li>
-          </li>  <!-- kelola user udh diubah ayidha -->
-          
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+          </li>
+          </li>  <!-- kelola user dan data pasien ayidha -->
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
+          </li>
+          </li>  <!-- kelola pesanan dan treatment syifa -->
+          <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href=""><i class="fa fa-share"></i> Pendapatan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+              </li>
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
