@@ -41,6 +41,33 @@ class c_pengeluaran extends CI_Controller {
 	 $this->m_pengeluaran->insert_pengeluaran($data,'pengeluaran');
 	 redirect('c_pengeluaran/viewPengeluaran');
  }
+ public function edit_penegeluaran($Id){
+	$where = array('Id' => $Id);
+	$data['penegeluaran'] = $this->m_pengeluaran->detail($where,'pengeluaran')->result();
+	$this->load->view('template/header');
+	$this->load->view('admin/edit_pengeluaran',$data);
+	$this->load->view('template/footer');
+}
+
+public function update_penegeluaran($Id){	
+	$Id = $this->input->post('Id');
+	$Kode = $this->input->post('kode');
+	$Tanggal = $this->input->post('tanggal');
+	$Keterangan = $this->input->post('keterangan');
+	$Jumlah = $this->input->post('jumlah');
+	$data = array(
+		'id' => $Id,
+		'kode' => $Kode,
+		'tanggal' => $Tanggal,
+		'keterangan' => $Keterangan,
+		'jumlah' => $Jumlah
+		);
+	$where=array(
+		'Id'=>$Id
+		);
+	$this->m_pendapatan->updatePengeluaran($where,$data,'pengeluaran');
+	redirect(base_url('c_pengeluaran/viewPengeluaran'));		
+}
 
 // 	public function viewProgress_direktur(){
 // 		$data ['progress'] = $this->m_progress->viewProgress()->result();

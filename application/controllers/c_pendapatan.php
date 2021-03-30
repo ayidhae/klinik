@@ -49,7 +49,7 @@ class c_pendapatan extends CI_Controller {
 
 public function edit_pendapatan($Id){
 	$where = array('Id' => $Id);
-	$data['pendapatan'] = $this->m_pendapatan->detail($where,'user')->result();
+	$data['pendapatan'] = $this->m_pendapatan->detail($where,'pendapatan')->result();
 	$this->load->view('template/header');
 	$this->load->view('admin/edit_pendapatan',$data);
 	$this->load->view('template/footer');

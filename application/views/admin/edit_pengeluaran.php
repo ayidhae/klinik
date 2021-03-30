@@ -80,30 +80,30 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Edit Pendapatan</li>
+        <li class="breadcrumb-item active">Edit Pengeluaran</li>
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- /.conainer-fluid -->
-<?php foreach($pendapatan as $detail): ?>
+<?php foreach($pengeluaran as $detail): ?>
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-           <h3 class="panel-title pull-left">Edit Pendapatan</h3>
-            <a href="<?php echo site_url('/c_pendapatan/viewPendapatan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
+           <h3 class="panel-title pull-left">Edit Pengeluaran</h3>
+            <a href="<?php echo site_url('/c_pengeluaran/viewPengeluaran');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
         <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
                             <label class="control-label">Kode</label>
                             <div class="">
-                            <Input name="kode" class="form-control" type="text" name="kode" value="<?php echo $detail->Kode ;?>" >
+                              <input class="form-control" type="text" name="kode" value="" required>
                             </div>
                             <div class="row">
                         <div class="col-md-12">                       
                           <div class="form-group">
                             <label class="control-label">Tanggal</label>
                             <div class="">
-                              <Input name="tanggal" class="form-control" type="date" name="tgl" value="<?php echo $detail->Tanggal;?>" >
+                              <input class="form-control" type="date" name="tgl" value="" required>
                             </div>
                           </div>
                           <div class="row">
@@ -111,22 +111,25 @@
                           <div class="form-group">
                             <label class="control-label">Keterangan</label>
                             <div class="">
-                              <Input name="keterangan" class="form-control" type="text" name="keterangan" value="<?php echo $detail->Keterangan;?>" >
+                              <input class="form-control" type="text" name="keterangan" value="" required>
                             </div>
                           </div>
                       <div class="col-md-12">                       
                           <div class="form-group">
                             <label class="control-label">Jumlah</label>
                             <div class="">
-                              <Input name="jumlah" class="form-control" type="number" name="jlh" value="<?php echo $detail->Jumlah;?>" >
+                              <input class="form-control" type="number" name="jlh" value="" required>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                              <a href=""><button class="btn btn-primary"> <i class="fa fa-pencil">Simpan</i></button></a>
-                              <a href="<?php echo base_url('c_pendapatan/viewPendapatan')?>" class="btn btn-danger"> Batal </a>
+                              <a href="<?php echo base_url('c_pengeluaran/viewPengeluaran')?>" class="btn btn-danger"> Batal </a>
                             </div>
                           </div>
+
+                        
+                      
                       <?php endforeach; ?>
                     </form>
                     </div>  <!-- end form-horizontal -->
