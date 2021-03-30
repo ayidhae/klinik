@@ -30,7 +30,7 @@
       </li>
     </ul>
   </header>
-  <div class="app-body">
+   <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav">
@@ -45,10 +45,28 @@
           </li>
         </li>
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-home"></i> Kelola User</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
           </li>
-          </li>  <!-- kelola user udh diubah ayidha -->
-  
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+          </li>
+          </li>  <!-- kelola user dan data pasien ayidha -->
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
+          </li>
+          </li>  <!-- kelola pesanan dan treatment syifa -->
+          <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href=""><i class="fa fa-share"></i> Pendapatan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+              </li>
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
@@ -65,11 +83,59 @@
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- /.conainer-fluid -->
-     
-      <div class="container-fluid">
+    
+<div class="container-fluid">
         <div class="card card-accent-success">
           <div class="card-header">
-            <h3>  Kelola Customer </h3>
+            <h3>  Kelola Pasien </h3>
+          </div>
+          <div class="card-body">
+          
+              <table id="dataVendor" class="table ">
+                <thead>
+                  <tr>
+                    <th>hak akses</th>
+                    <th>Nama</th>
+                     <th>Alamat</th>
+                     <th>contact</th>
+                      <th>email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <?php
+                  $vendor_user = json_decode(json_encode($pasien), true);
+                  $no = 0;
+                  foreach($vendor_user as $user):
+                  $no++;
+                  ?>
+                  
+                  <tr>
+                    td><?php  echo $no; ?></td>
+                    <td><?php  echo $user['hak_akses']; ?></td>
+                    <td><?php  echo $user['nama']; ?></td>
+                    <td><?php  echo $user['alamat']; ?></td>
+                    <td><?php  echo $user['contact']; ?></td>
+                    <td><?php echo $user['username'];?></td> 
+                       <td><?php echo $user['password'];?></td>   
+                         <td><?php echo $user['status'];?></td>
+                  </tr>
+                  <?php
+                  endforeach;
+                  ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+
+<div class="container-fluid">
+        <div class="card card-accent-success">
+          <div class="card-header">
+            <h3>  Kelola Internal  </h3>
           </div>
           <div class="card-body">
             
@@ -78,17 +144,16 @@
               <table id="dataCustomer" class="table ">
                 <thead>
                   <tr>
-                    <th>No</th>
+                     <th>No</th>
                     <th>Nama</th>
                     <th>Username</th>
                     <th>Password</th>
                     <th>No hp</th>
-                    <th> Action </th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  $customer_user = json_decode(json_encode($pasien), true);                  
+                  $customer_user = json_decode(json_encode($user), true);                  
                   $no = 0;
                   foreach($customer_user as $user):
                   $no++;

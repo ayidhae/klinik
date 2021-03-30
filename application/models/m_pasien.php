@@ -7,7 +7,7 @@ class m_pasien extends CI_Model{
 		$this->db->insert('pasien',$data);
 		return $data;
 	}
-
+	
     function cek($username, $password){
 	 	$this->db->where('username', $username);
 	 	$this->db->where('password', md5($password));

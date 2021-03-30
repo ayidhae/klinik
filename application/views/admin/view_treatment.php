@@ -45,7 +45,7 @@
           </li>
         </li>
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-home"></i> Kelola User</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
