@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_pendapatan extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		//$this->load->model('m_progress');
+		$this->load->model('m_pendapatan');
 		
 	}
 		 //call model
@@ -16,9 +16,9 @@ class c_pendapatan extends CI_Controller {
 
 	public function viewPendapatan(){
 	
-	 	//$data ['progress'] = $this->m_progress->viewProgress()->result();
+	 	$data ['pendapatan'] = $this->m_pendapatan->getAllpendapatan()->result();
 	 	$this->load->view('template/header');
-		$this->load->view('admin/view_pendapatan');
+		$this->load->view('admin/view_pendapatan',$data);
 		$this->load->view('template/footer'); 
 	 }
 

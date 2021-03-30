@@ -210,27 +210,27 @@
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                                 <button type="submit" name="ubah" class="btn btn-primary">Simpan</button>
                                                 </form>
-                <!-- <tbody>
+                <tbody>
                   <?php
-                  $customer_user = json_decode(json_encode($pasien), true);                  
+                  $pendapatan_masuk = json_decode(json_encode($pendapatan), true);                  
                   $no = 0;
-                  foreach($customer_user as $user):
+                  foreach($pendapatan_masuk as $pendapatan):
                   $no++;
                   ?>
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['No.']; ?></td>
-                    <td><?php echo $user['Kode'];?></td> 
-                       <td><?php echo $user['Keterangan'];?></td>   
-                         <td><?php echo $user['Jumalah'];?></td>     
-                         <td><?php echo $user['aksi'];?></td>                                    
+                    <td><?php  echo $pendapatan['Kode']; ?></td>
+                    <td><?php echo $pendapatan['Tanggal'];?></td> 
+                       <td><?php echo $pendapatan['Keterangan'];?></td>   
+                         <td><?php echo $pendapatan['Jumlah'];?></td>     
+                         <!-- <td><?php echo $pendapatan['aksi'];?></td>                                     -->
                   
                   </tr>
                   <?php
                   endforeach;
                   ?>
-                </tbody> -->
+                </tbody>
               </table>
               
             </div>
