@@ -96,11 +96,34 @@
                       <div class="row">
                         <div class="col-md-6">                       
                           <div class="form-group">
-                            <!-- <label class="control-label">Nama</label>
+                            <label class="control-label">Kode</label>
                             <div class="">
                               <input class="form-control" type="text" name="nama" value="" required>
-                            </div> -->
-                            <div class="panel-body">
+                            </div>
+                            <div class="row">
+                        <div class="col-md-12">                       
+                          <div class="form-group">
+                            <label class="control-label">Tanggal</label>
+                            <div class="">
+                              <input class="form-control" type="date" name="tgl" value="" required>
+                            </div>
+                          </div>
+                          <div class="row">
+                        <div class="col-md-12">                       
+                          <div class="form-group">
+                            <label class="control-label">Keterangan</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="keterangan" value="" required>
+                            </div>
+                          </div>
+                      <div class="col-md-12">                       
+                          <div class="form-group">
+                            <label class="control-label">Jumlah</label>
+                            <div class="">
+                              <input class="form-control" type="number" name="jlh" value="" required>
+                            </div>
+                          </div>
+                            <!-- <div class="panel-body">
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -125,10 +148,10 @@
                                                 <div class="form-group">
                                                     <label>Jumlah</label>
                                                     <input class="form-control" type="number" name="jml" />
-                                                </div>
+                                                </div> -->
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                        <a class="btn btn-danger" href="<?php echo base_url('c_pendapatan/viewPendapatan')?>"><i class="fa fa-close"></i> Batal</a>
                                             <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
                                         </div>
                                     </div>
@@ -188,11 +211,11 @@
                 ?> -->
                          
 
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-plus">Tambah</i></button>
                                 <a class="btn btn-danger" href="<?php echo base_url('c_user/kelola_user')?>"><i class="fa fa-close"></i> Batal</a>
-                              </div>
+                              </div> -->
                             </div>                          
                         </div>                      
                       </div>                      
