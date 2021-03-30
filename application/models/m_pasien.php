@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class m_pasien extends CI_Model{
 	
-	public function insert($data){
-		$this->db->insert('pasien',$data);
-		return $data;
-	}
+function insert_pasien($data){
+        $query = $this->db->insert('pasien',$data);
+        return $query;
+    }
 	
     function cek($username, $password){
 	 	$this->db->where('username', $username);
