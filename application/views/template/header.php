@@ -11,7 +11,7 @@
   <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
   <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-  <title>PT Bhakti Unggul Teknovasi</title>
+  <title>KLINIK KECANTIKAN UTSUKHUSI BANDUNG </title>
 
   <!-- Icons -->
   <link href="<?php echo base_url('asset/css/font-awesome.min.css');?>" rel="stylesheet">
