@@ -44,11 +44,15 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>
+          </li>
+          </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
           </li>
           </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
@@ -96,7 +100,7 @@
                 <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url().'c_pengeluaran/update_pengeluaran/'.$detail->Kode; ?>" method="post">
+                    <form action="<?php echo base_url().'c_pengeluaran/update_penegeluaran/'.$detail->Kode; ?>" method="post">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
