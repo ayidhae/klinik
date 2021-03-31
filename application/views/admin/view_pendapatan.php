@@ -85,7 +85,7 @@
         <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">kelola pasien</li>
+        <li class="breadcrumb-item active">kelola Pendapatan </li>
 
         <!-- Breadcrumb Menu-->
       </ol>
@@ -126,7 +126,7 @@
                          <td><?php echo $user['Jumlah'];?></td>     
                          <td>
                     
-                         <a href="<?php echo base_url('/c_pendapatan/edit_pendapatan/'.$user['Id']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+                         <a href="<?php echo base_url('/c_pendapatan/edit_pendapatan/'.$user['Kode']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
                          </td>
                        
                        

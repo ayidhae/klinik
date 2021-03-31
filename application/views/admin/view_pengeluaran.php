@@ -118,14 +118,14 @@
                   $no++;
                   ?>
                   <tr>
-                    <td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['Kode']; ?></td>
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $user['Kode']; ?></td>
                     <td><?php echo $user['Tanggal'];?></td> 
                        <td><?php echo $user['Keterangan'];?></td>   
                          <td><?php echo $user['Jumlah'];?></td>     
                          <td>
                     
-                         <a href="<?php echo base_url('/c_pengeluaran/edit_pengeluaran/'.$user['Id']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+                         <a href="<?php echo base_url('/c_pengeluaran/edit_pengeluaran/'.$user['Kode']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
                          </td>
                        
                        

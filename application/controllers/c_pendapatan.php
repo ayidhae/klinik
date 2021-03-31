@@ -31,13 +31,13 @@ class c_pendapatan extends CI_Controller {
    }  
 
    function addPendapatan(){
-	$Id = $this->input->post('Id');
+	// $Id = $this->input->post('Id');
 	$Kode = $this->input->post('kode');
 	$Tanggal = $this->input->post('tanggal');
 	$Keterangan = $this->input->post('keterangan');
 	$Jumlah = $this->input->post('jumlah');
 	$data = array(
-		'id' => $Id,
+		// 'id' => $Id,
 		'kode' => $Kode,
 		'Tanggal' => $Tanggal,
 		'keterangan' => $Keterangan,
@@ -47,29 +47,29 @@ class c_pendapatan extends CI_Controller {
 	redirect('c_pendapatan/viewPendapatan');
 }
 
-public function edit_pendapatan($Id){
-	$where = array('Id' => $Id);
+public function edit_pendapatan($Kode){
+	$where = array('Kode' => $Kode);
 	$data['pendapatan'] = $this->m_pendapatan->detail($where,'pendapatan')->result();
 	$this->load->view('template/header');
 	$this->load->view('admin/edit_pendapatan',$data);
 	$this->load->view('template/footer');
 }
 
-public function update_pendapatan($Id){	
-	$Id = $this->input->post('Id');
+public function update_pendapatan($Kode){	
+	// $Id = $this->input->post('Id');
 	$Kode = $this->input->post('kode');
 	$Tanggal = $this->input->post('tanggal');
 	$Keterangan = $this->input->post('keterangan');
 	$Jumlah = $this->input->post('jumlah');
 	$data = array(
-		'id' => $Id,
+		// 'id' => $Id,
 		'kode' => $Kode,
 		'tanggal' => $Tanggal,
 		'keterangan' => $Keterangan,
 		'jumlah' => $Jumlah
 		);
 	$where=array(
-		'Id'=>$Id
+		'Kode'=>$Kode
 		);
 	$this->m_pendapatan->updatePendapatan($where,$data,'pendapatan');
 	redirect(base_url('c_pendapatan/viewPendapatan'));		

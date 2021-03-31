@@ -92,18 +92,24 @@
             <a href="<?php echo site_url('/c_pengeluaran/viewPengeluaran');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
         <div class="row">
+        <div class="col-md-9">
+                <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <form action="<?php echo base_url().'c_pengeluaran/update_pengeluaran/'.$detail->Kode; ?>" method="post">
+                      <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
                             <label class="control-label">Kode</label>
                             <div class="">
-                              <input class="form-control" type="text" name="kode" value="" required>
+                            <Input name="kode" class="form-control" type="text" name="kode" value="<?php echo $detail->Kode ;?>" >
                             </div>
                             <div class="row">
                         <div class="col-md-12">                       
                           <div class="form-group">
                             <label class="control-label">Tanggal</label>
                             <div class="">
-                              <input class="form-control" type="date" name="tgl" value="" required>
+                              <Input name="tanggal" class="form-control" type="date" name="tgl" value="<?php echo $detail->Tanggal;?>" >
                             </div>
                           </div>
                           <div class="row">
@@ -111,14 +117,14 @@
                           <div class="form-group">
                             <label class="control-label">Keterangan</label>
                             <div class="">
-                              <input class="form-control" type="text" name="keterangan" value="" required>
+                              <Input name="keterangan" class="form-control" type="text" name="keterangan" value="<?php echo $detail->Keterangan;?>" >
                             </div>
                           </div>
                       <div class="col-md-12">                       
                           <div class="form-group">
                             <label class="control-label">Jumlah</label>
                             <div class="">
-                              <input class="form-control" type="number" name="jlh" value="" required>
+                              <Input name="jumlah" class="form-control" type="number" name="jlh" value="<?php echo $detail->Jumlah;?>" >
                             </div>
                           </div>
                           <div class="form-group">
@@ -127,9 +133,6 @@
                               <a href="<?php echo base_url('c_pengeluaran/viewPengeluaran')?>" class="btn btn-danger"> Batal </a>
                             </div>
                           </div>
-
-                        
-                      
                       <?php endforeach; ?>
                     </form>
                     </div>  <!-- end form-horizontal -->

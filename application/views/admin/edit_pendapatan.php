@@ -92,6 +92,12 @@
             <a href="<?php echo site_url('/c_pendapatan/viewPendapatan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
         <div class="row">
+        <div class="col-md-9">
+                <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <form action="<?php echo base_url(). 'c_pendapatan/update_pendapatan/'.$detail->Kode; ?>" method="post">
+                      <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
                             <label class="control-label">Kode</label>
