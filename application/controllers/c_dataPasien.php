@@ -30,7 +30,8 @@ class c_dataPasien extends CI_Controller {
 		$password = $this->input->post('password');
 		
 		$data = array(
-			'hak_akses' =>'customer',
+			'status' =>'aktif',
+			'hak_akses' =>'pasien',
 			'nama' => $nama,
 			'alamat' => $alamat,
 			'contact' => $contact,
@@ -42,7 +43,7 @@ class c_dataPasien extends CI_Controller {
 			'tanggal' => date('Y-m-d h:i:s')
 			);
 		$this->m_pasien->insert_pasien($data,'pasien');
-		redirect('c_user/kelola_user');
+		redirect('c_user/kelola_pasien');
 	}
 	public function edit_user($username){
 		$where = array('username' => $username);
