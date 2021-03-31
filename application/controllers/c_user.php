@@ -11,13 +11,14 @@ class c_user extends CI_Controller {
 
  //    
 
+
 	public function homeAdmin(){
 		// $data['barang'] = $this->m_barang->getAllBarang('barang');
 		$this->load->view('template/header');
 		 $this->load->view('admin/view_treatment');		
 		$this->load->view('template/footer');
 	}
-
+	
 	public function kelola_user(){		
 		$data['user'] = $this->m_user->getAllUser()->result();
 		$data['pasien'] = $this->m_pasien->getAllPasien()->result();	
@@ -83,7 +84,41 @@ function inputUser(){
 		$this->m_user->updateProfile($where,$data,'user');
 		redirect(base_url('c_user/kelola_user'));		
 	}
-
+		public function edit_pasien($username){
+		$where = array('username' => $username);
+		$data['pasien'] = $this->m_pasien->detail($where,'pasien')->result();
+		$this->load->view('template/header');
+		$this->load->view('admin/edit_pasien',$data);
+		$this->load->view('template/footer');
+	}
+		public function update_pasien($username){
+		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$contact = $this->input->post('contact');
+		$email = $this->input->post('email');
+		$pekerjaan = $this->input->post('pekerjaan');
+		$umur = $this->input->post('umur');
+		$keluhan = $this->input->post('keluhan');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$status=$this->input->post('status');
+		$data=array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'contact' => $contact,
+			'pekerjaan ' => $pekerjaan ,
+			'umur' => $umur ,
+			'keluhan' => $keluhan,
+			'username' => $username,
+			'password' => $password,
+			'status'=>$status
+			);
+		$where=array(
+			'username'=>$username
+			);
+		$this->m_pasien->updatePasien($where,$data,'pasien');
+		redirect(base_url('c_user/kelola_pasien'));		
+	}
 	//untuk direktur
 	public function viewProfil(){
 		$where = array('username' => $this->session->userdata('username'));

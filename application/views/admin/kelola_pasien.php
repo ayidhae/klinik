@@ -110,6 +110,7 @@
                     <th>Username</th>
                     <th>Password</th>
                     <th>status</th>
+                    <th>action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -119,7 +120,7 @@
                   foreach($customer_user as $user):
                   $no++;
                   ?>
-                  
+                
                   <tr>
                      <td><?php  echo $no; ?></td>
                     <td><?php  echo $user['hak_akses']; ?></td>
@@ -131,7 +132,11 @@
                        <td><?php echo $user['password'];?></td>   
                          <td><?php echo $user['status'];?></td>
                        
+                             <td>  
                        
+                        <a href="<?php echo base_url('/c_user/edit_pasien/'.$user['username']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+
+                    </td>
                   </tr>
                   <?php
                   endforeach;

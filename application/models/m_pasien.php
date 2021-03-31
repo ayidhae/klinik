@@ -13,6 +13,7 @@ function insert_pasien($data){
 	//  	$this->db->where('password', md5($password));
 	//  	return $this->db->get('pasien');
 	// }
+
 		function cek($username, $password){
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
@@ -45,7 +46,7 @@ function insert_pasien($data){
 		$this->db->delete($table);
 	}
 	
-	function updateProfile($where,$data,$table){
+	function updatePasien($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
