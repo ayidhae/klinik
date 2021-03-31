@@ -80,23 +80,23 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Edit Pendapatan</li>
+        <li class="breadcrumb-item active">Edit Pengeluaran</li>
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- /.conainer-fluid -->
-<?php foreach($pendapatan as $detail): ?>
+<?php foreach($pengeluaran as $detail): ?>
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-           <h3 class="panel-title pull-left">Edit Pendapatan</h3>
-            <a href="<?php echo site_url('/c_pendapatan/viewPendapatan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
+           <h3 class="panel-title pull-left">Edit Pengeluaran</h3>
+            <a href="<?php echo site_url('/c_pengeluaran/viewPengeluaran');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
         <div class="row">
         <div class="col-md-9">
                 <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url(). 'c_pendapatan/update_pendapatan/'.$detail->Kode; ?>" method="post">
+                    <form action="<?php echo base_url().'c_pengeluaran/update_pengeluaran/'.$detail->Kode; ?>" method="post">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
@@ -130,7 +130,7 @@
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                              <a href=""><button class="btn btn-primary"> <i class="fa fa-pencil">Simpan</i></button></a>
-                              <a href="<?php echo base_url('c_pendapatan/viewPendapatan')?>" class="btn btn-danger"> Batal </a>
+                              <a href="<?php echo base_url('c_pengeluaran/viewPengeluaran')?>" class="btn btn-danger"> Batal </a>
                             </div>
                           </div>
                       <?php endforeach; ?>

@@ -13,6 +13,13 @@ function insert_pengeluaran($data){
   $query = $this->db->insert('pengeluaran',$data);
   return $query;
 }
+function detail($where,$table){     
+  return $this->db->get_where($table,$where);
+}
+function updatePengeluaran($where,$data,$table){
+  $this->db->where($where);
+  $this->db->update($table,$data);
+}
   
 
   //   return $this->db->query("SELECT * FROM pendapatan ORDER BY tanggal DESC");
