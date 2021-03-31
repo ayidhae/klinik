@@ -8,21 +8,17 @@ function insert_pasien($data){
         return $query;
     }
 	
-    function cek($username, $password){
-	 	$this->db->where('username', $username);
-	 	$this->db->where('password', md5($password));
-	 	return $this->db->get('pasien');
+ //    function cek($username, $password){
+	//  	$this->db->where('username', $username);
+	//  	$this->db->where('password', md5($password));
+	//  	return $this->db->get('pasien');
+	// }
+		function cek($username, $password){
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		return $this->db->get('pasien');
 	}
 
-	// function view_cus (){
-	// 	return $this->db->get('pasien');
-	// }
-
-
-	// function cekRegistrasi($username){
- // 	$this->db->where('username', $username);
-	//  	return $this->db->get('pasien');
-	//  }
 
 	function detail($where,$table){		
 		return $this->db->get_where($table,$where);
