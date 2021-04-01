@@ -105,7 +105,7 @@
                     <th>No.</th>
                     <th>Kode</th>
                     <th>Tanggal</th>
-                    <th>Keterangan</th>
+                    <th>Pendapatan</th>
                     <th>Jumlah</th>
                     <th>Aksi</th>
                   </tr>
@@ -114,19 +114,20 @@
                   <?php
                   $pendapatan = json_decode(json_encode($pendapatan), true);                  
                   $no = 0;
-                  foreach($pendapatan as $user):
+                  foreach($pendapatan as $data):
                   $no++;
+                  $data['pendapatan']	= $this->db->query("SELECT * FROM pendapatan WHERE jenis = 'masuk' ")
                   ?>
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
-                    <td><?php  echo $user['Kode']; ?></td>
-                    <td><?php echo $user['Tanggal'];?></td> 
-                       <td><?php echo $user['Keterangan'];?></td>   
-                         <td><?php echo $user['Jumlah'];?></td>     
+                    <td><?php  echo $data['Kode']; ?></td>
+                    <td><?php echo $data['Tanggal'];?></td> 
+                       <td><?php echo $data['Pendapatan'];?></td>   
+                         <td><?php echo $data['Jumlah'];?></td>     
                          <td>
                     
-                         <a href="<?php echo base_url('/c_pendapatan/edit_pendapatan/'.$user['Kode']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+                         <a href="<?php echo base_url('/c_pendapatan/edit_pendapatan/'.$data['Kode']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
                          </td>
                        
                        

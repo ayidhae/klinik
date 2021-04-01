@@ -115,9 +115,9 @@
                           <div class="row">
                         <div class="col-md-12">                       
                           <div class="form-group">
-                            <label class="control-label">Keterangan</label>
+                            <label class="control-label">pendapatan</label>
                             <div class="">
-                              <Input name="keterangan" class="form-control" type="text" name="keterangan" value="<?php echo $detail->Keterangan;?>" >
+                              <Input name="Pendapatan" class="form-control" type="text" name="pendapatan" value="<?php echo $detail->Pendapatan;?>" >
                             </div>
                           </div>
                       <div class="col-md-12">                       
