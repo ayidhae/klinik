@@ -148,13 +148,21 @@
                     <th class="text-center">PENGELUARAN</th>
                     <th class="text-right">JUMLAH</th>
                     <th class="text-right">JUMLAaH</th>
+                    <th class="text-right">AKSI</th>
+                   
                   </tr>
-                </thead>
+                </thead> 
                 <tbody>
+               
                   <?php
           if($keuangan->num_rows()>0){
             $no = 1;
             foreach ($keuangan->result() as $row) {
+              if($row->id_keuangan==''){
+                $act='<a href="'.site_url('c_keuangan/edit_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit </i></a>';
+              }else{
+                $act='<a href="#" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit<i ';
+              }
               echo'
               <tr>
                 <td width="5%" class="text-center">'.$no++.'</td>
@@ -164,11 +172,13 @@
                      <td class="text-center">'.$row->pengeluaran.'</td>
                   <td class="text-center">'.$row->jumlah_pengeluaran.'</td>
                    <td class="text-center">'.$row->jumlah_pendapatan.'</td>
-                
+                   <td class="text-center">
+                   '.$act.'
 
               </tr>';
             }
           }
+          
           ?> 
       
       

@@ -15,6 +15,22 @@ function getAllKeuangan(){
 		$query = $this->db->insert('keuangan',$data);
 		return $query;
 	}
+	function simpan($tabel,$data)
+	{
+		$s=$this->db->insert($tabel,$data);
+		return $s;
+	}
+	function edit($tabel,$where)
+	{
+		$query=$this->db->query("select * from $tabel where $where");
+		return $query;
+	}
+
+	function update($tabel,$data,$where)
+	{
+		$this->db->where($where,$data[$where]);
+		$this->db->update($tabel,$data);
+	}
 
 	function getIdKeuangan(){
 		$this->db->select('RIGHT(keuangan.id_keuangan,4) as id', FALSE);
