@@ -44,15 +44,11 @@
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
           </li>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>
-          </li>
-          </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_user/kelola_user');?> "><i class="fa fa-user"></i> Kelola User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Data Pasien</a>
           </li>
           </li>  <!-- kelola user dan data pasien ayidha -->
           <li class="nav-item">
@@ -88,7 +84,7 @@
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- /.conainer-fluid -->
-<?php foreach($pengeluaran as $detail): ?>
+<?php foreach($pendapatan as $detail): ?>
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
@@ -100,7 +96,7 @@
                 <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url().'c_pengeluaran/update_penegeluaran/'.$detail->Kode; ?>" method="post">
+                    <form action="<?php echo base_url(). 'c_pengeluaran/update_pengeluaran/'.$detail->Kode; ?>" method="post">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
@@ -119,9 +115,9 @@
                           <div class="row">
                         <div class="col-md-12">                       
                           <div class="form-group">
-                            <label class="control-label">Keterangan</label>
+                            <label class="control-label">pengeluaran</label>
                             <div class="">
-                              <Input name="keterangan" class="form-control" type="text" name="keterangan" value="<?php echo $detail->Keterangan;?>" >
+                              <Input name="Pengeluaran" class="form-control" type="text" name="pengeluaran" value="<?php echo $detail->Pengeluaran;?>" >
                             </div>
                           </div>
                       <div class="col-md-12">                       

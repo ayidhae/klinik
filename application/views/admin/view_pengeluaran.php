@@ -105,24 +105,24 @@
                     <th>No.</th>
                     <th>Kode</th>
                     <th>Tanggal</th>
-                    <th>Keterangan</th>
+                    <th>pengeluaran</th>
                     <th>Jumlah</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  $pengeluaran = json_decode(json_encode($pengeluaran), true);                  
+                  $pendapatan = json_decode(json_encode($pendapatan), true);                  
                   $no = 0;
-                  foreach($pengeluaran as $user):
+                  foreach($pendapatan as $user):
                   $no++;
                   ?>
                   <tr>
                     <td><?php echo $no; ?></td>
                     <td><?php echo $user['Kode']; ?></td>
                     <td><?php echo $user['Tanggal'];?></td> 
-                       <td><?php echo $user['Keterangan'];?></td>   
-                         <td><?php echo $user['Jumlah'];?></td>     
+                    <td><?php echo $user['Pengeluaran'];?></td>   
+                      <td><?php echo $user['Jumlah'];?></td>     
                          <td>
                     
                          <a href="<?php echo base_url('/c_pengeluaran/edit_pengeluaran/'.$user['Kode']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>

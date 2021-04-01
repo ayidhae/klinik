@@ -34,13 +34,13 @@ class c_pendapatan extends CI_Controller {
 	// $Id = $this->input->post('Id');
 	$Kode = $this->input->post('kode');
 	$Tanggal = $this->input->post('tanggal');
-	$Keterangan = $this->input->post('keterangan');
+	$Pendapatan = $this->input->post('Pendapatan');
 	$Jumlah = $this->input->post('jumlah');
 	$data = array(
 		// 'id' => $Id,
 		'kode' => $Kode,
 		'Tanggal' => $Tanggal,
-		'keterangan' => $Keterangan,
+		'Pendapatan' => $Pendapatan,
 		'jumlah' => $Jumlah
 		);
 	$this->m_pendapatan->insert_pendapatan($data,'pendapatan');
@@ -59,13 +59,13 @@ public function update_pendapatan($Kode){
 	// $Id = $this->input->post('Id');
 	$Kode = $this->input->post('kode');
 	$Tanggal = $this->input->post('tanggal');
-	$Keterangan = $this->input->post('keterangan');
+	$Pendapatan = $this->input->post('Pendapatan');
 	$Jumlah = $this->input->post('jumlah');
 	$data = array(
 		// 'id' => $Id,
 		'kode' => $Kode,
 		'tanggal' => $Tanggal,
-		'keterangan' => $Keterangan,
+		'Pendapatan' => $Pendapatan,
 		'jumlah' => $Jumlah
 		);
 	$where=array(

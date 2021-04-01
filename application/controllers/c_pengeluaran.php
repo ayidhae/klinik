@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_pengeluaran extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_pengeluaran');
+		$this->load->model('m_pendapatan');
 		
 	}
 		 //call model
@@ -16,7 +16,7 @@ class c_pengeluaran extends CI_Controller {
 
 	public function viewPengeluaran(){
 	
-	 	$data ['pengeluaran'] = $this->m_pengeluaran->getAllpengeluaran()->result();
+	 	$data ['pendapatan'] = $this->m_pendapatan->getAllpendapatan()->result();
 	 	$this->load->view('template/header');
 		$this->load->view('admin/view_pengeluaran',$data);
 		$this->load->view('template/footer'); 
@@ -30,20 +30,20 @@ class c_pengeluaran extends CI_Controller {
 	function addPengeluaran(){
 	 $Kode = $this->input->post('kode');
 	 $Tanggal = $this->input->post('tanggal');
-	 $Keterangan = $this->input->post('keterangan');
+	 $Pengeluaran = $this->input->post('pengeluaran');
 	 $Jumlah = $this->input->post('jumlah');
 	 $data = array(
 		 'kode' => $Kode,
 		 'Tanggal' => $Tanggal,
-		 'keterangan' => $Keterangan,
+		 'Pengeluaran' => $Pengeluaran,
 		 'jumlah' => $Jumlah
 		 );
-	 $this->m_pengeluaran->insert_pengeluaran($data,'pengeluaran');
+	 $this->m_pendapatan->insert_pendapatan($data,'pendapatan');
 	 redirect('c_pengeluaran/viewPengeluaran');
  }
  public function edit_penegeluaran($Kode){
 	$where = array('Kode' => $Kode);
-	$data['penegeluaran'] = $this->m_pengeluaran->detail($where,'pengeluaran')->result();
+	$data['pendapatan'] = $this->m_pendapatan->detail($where,'pendapatan')->result();
 	$this->load->view('template/header');
 	$this->load->view('admin/edit_pengeluaran',$data);
 	$this->load->view('template/footer');
@@ -53,19 +53,19 @@ public function update_penegeluaran($Kode){
 	// $Id = $this->input->post('Id');
 	$Kode = $this->input->post('kode');
 	$Tanggal = $this->input->post('tanggal');
-	$Keterangan = $this->input->post('keterangan');
+	$Pengeluaran = $this->input->post('Pengeluaran');
 	$Jumlah = $this->input->post('jumlah');
 	$data = array(
 		// 'id' => $Id,
 		'kode' => $Kode,
 		'tanggal' => $Tanggal,
-		'keterangan' => $Keterangan,
+		'Pengeluaran' => $Pengeluaran,
 		'jumlah' => $Jumlah
 		);
 	$where=array(
 		'kode'=>$Kode
 		);
-	$this->m_pendapatan->updatePengeluaran($where,$data,'pengeluaran');
+	$this->m_pendapatan->updatePengeluaran($where,$data,'pendapatan');
 	redirect(base_url('c_pengeluaran/viewPengeluaran'));		
 }
 }

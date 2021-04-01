@@ -77,7 +77,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Pendapatan</li>
+        <li class="breadcrumb-item active">Pengeluaran</li>
         <!-- Breadcrumb Menu-->
       </ol>  
       <div class="col-md-12">
@@ -111,9 +111,9 @@
                           <div class="row">
                         <div class="col-md-12">                       
                           <div class="form-group">
-                            <label class="control-label">Keterangan</label>
+                            <label class="control-label">Pengeluaran</label>
                             <div class="">
-                              <input class="form-control" type="text" name="keterangan" value="" required>
+                              <input class="form-control" type="text" name="Pengeluaran" value="" required>
                             </div>
                           </div>
                       <div class="col-md-12">                       
