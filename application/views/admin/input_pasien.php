@@ -109,7 +109,7 @@
                           <div class="form-group">
                             <label class="control-label">Nama</label>
                             <div class="">
-                              <input class="form-control" type="text" name="nama" value="" required>
+                              <input class="form-control"  rows="4" type="text" name="nama" value="" required>
                             </div>
                           </div>
 

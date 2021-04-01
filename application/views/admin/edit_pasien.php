@@ -30,6 +30,7 @@
       </li>
     </ul>
   </header>
+
   <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
@@ -115,6 +116,15 @@
                           </div>
                            
                           </div>
+                            <div class="col-md-10">                       
+                          <div class="form-group">
+                            <label class="control-label">alamat</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="alamat" value="<?php echo $detail->alamat ;?>" >
+                            </div>
+                          </div>
+                          </div>
+                               </div>
                             <div class="col-md-10">                       
                           <div class="form-group">
                             <label class="control-label">alamat</label>
