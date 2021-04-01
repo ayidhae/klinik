@@ -116,7 +116,7 @@
                   $no = 0;
                   foreach($pendapatan as $data):
                   $no++;
-                  $data['pendapatan']	= $this->db->query("SELECT * FROM pendapatan WHERE jenis = 'masuk' ")
+                
                   ?>
                   
                   <tr>
