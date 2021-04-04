@@ -109,6 +109,7 @@ function inputUser(){
 			'contact' => $contact,
 			'pekerjaan ' => $pekerjaan ,
 			'umur' => $umur ,
+			'email' => $email ,
 			'keluhan' => $keluhan,
 			'username' => $username,
 			'password' => $password,

@@ -189,4 +189,13 @@
             </div>
           </div>
         </main>
-      </div>
+      <script src="<?php echo base_url('asset/node_modules/jquery/dist/jquery.min.js');?>"></script>
+<script src="<?php echo base_url('asset/ckeditor/ckeditor.js'); ?>"></script>
+<script>
+$(function (){
+  CKEDITOR.replace( 'keluhan');
+});
+</script> 
+</div>
+</div>
+</div>
