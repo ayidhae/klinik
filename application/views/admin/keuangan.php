@@ -158,11 +158,11 @@
           if($keuangan->num_rows()>0){
             $no = 1;
             foreach ($keuangan->result() as $row) {
-              if($row->id_keuangan=='keuangan'){
-                $act='<a href="'.site_url('c_keuangan/edit_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit </i></a>';
-              }else{
-                $act='<a href="#" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit<i ';
-              }
+              // if($row->id_keuangan=='keuangan'){
+              //   $act='<a href="'.site_url('c_keuangan/edit_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit </i></a>';
+              // }else{
+              //   $act='<a href="#" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit<i> ';
+              // }
               echo'
               <tr>
                 <td width="5%" class="text-center">'.$no++.'</td>
@@ -173,7 +173,9 @@
                   <td class="text-center">'.$row->jumlah_pengeluaran.'</td>
                    <td class="text-center">'.$row->jumlah_pendapatan.'</td>
                    <td class="text-center">
-                   '.$act.'
+                     <a href="'.site_url('c_keuangan/edit_keuangan/'.trim(base64_encode($row->id_keuangan),'=').'').'" class="btn btn-primary title="edit"><i class="fa fa-pencil"></i></a>
+  
+           
 
               </tr>';
             }

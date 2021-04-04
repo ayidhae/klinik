@@ -60,6 +60,7 @@ function inputUser(){
 	public function edit_user($username){
 		$where = array('username' => $username);
 		$data['user'] = $this->m_user->detail($where,'user')->result();
+	
 		$this->load->view('template/header');
 		$this->load->view('admin/edit_user',$data);
 		$this->load->view('template/footer');

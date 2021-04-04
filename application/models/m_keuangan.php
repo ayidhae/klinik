@@ -26,11 +26,21 @@ function getAllKeuangan(){
 		return $query;
 	}
 
-	function update($tabel,$data,$where)
-	{
-		$this->db->where($where,$data[$where]);
-		$this->db->update($tabel,$data);
+
+	// function update($tabel,$data,$where)
+	// {
+	// 	$this->db->where($where,$data[$where]);
+	// 	$this->db->update($tabel,$data);
+	// }
+	function updateKeuangan($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
 	}
+	function detail($where,$table){		
+		return $this->db->get_where($table,$where);
+
+	}
+
 
 	function getIdKeuangan(){
 		$this->db->select('RIGHT(keuangan.id_keuangan,4) as id', FALSE);

@@ -73,7 +73,7 @@
     </div>
     <!-- Main content -->
  <?php
-foreach($edit_keuangan->result_array() as $row){
+foreach($keuangan->result_array() as $row){
   $id_keuangan = $row['id_keuangan'];
   //$nama_pengadaan    = $row['nama_pengadaan'];
 }
@@ -102,7 +102,7 @@ foreach($edit_keuangan->result_array() as $row){
         <div class="form-group">
         <label class="control-label col-sm-2" for="pendapatan">Pendapatan</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="pendapatan" name="pendapatan" value="<?php echo $pendapatan;?>" readonly>
+          <input type="text" class="form-control" id="pendapatan" name="pendapatan"  value="<?php echo $detail->pe ;?>" readonly>
         </div>
         </div>
         <div class="form-group">
