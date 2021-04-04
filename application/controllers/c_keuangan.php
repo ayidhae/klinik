@@ -10,12 +10,12 @@ class c_keuangan extends CI_Controller {
     }
 
  //    
-  public function viewKeuangan(){    
-    $data['keuangan'] = $this->m_keuangan->getAllKeuangan()->result();
-    $this->load->view('template/header');
-    $this->load->view('keuangan',$data);
-    $this->load->view('template/footer'); 
-  }
+  // public function viewKeuangan(){    
+  //   $data['keuangan'] = $this->m_keuangan->getAllKeuangan()->result();
+  //   $this->load->view('template/header');
+  //   $this->load->view('admin/keuangan',$data);
+  //   $this->load->view('template/footer'); 
+  // }
     
     
   
@@ -23,7 +23,7 @@ class c_keuangan extends CI_Controller {
 function inputKeuangan(){
   
     $data['keuangan'] = $this->m_keuangan->getAllKeuangan();
-        $this->load->view('template/header');
+    $this->load->view('template/header');
     $this->load->view('admin/keuangan',$data);
     $this->load->view('template/footer');
     }  
@@ -49,7 +49,32 @@ function inputKeuangan(){
     $this->m_keuangan->insert_keuangan($data,'keuangan');
     redirect('c_keuangan/inputKeuangan');
   }
+   public function edit_keuangan($id_keuangan){
+		$where = array('id_keuangan' => $id_keuangan);
+	  $data['keuangan'] = $this->m_keuangan->detail($where,'keuangan')->result();
+		$this->load->view('template/header');
+		$this->load->view('admin/edit_keuangan');
+		$this->load->view('template/footer');
+   }
+   public function update_Keuangan($id_keuangan){
+		$pendapatan = $this->input->post('pendapatan');
+		$pengeluaran = $this->input->post('pengeluaran');
+		$jumlah_pendapatan = $this->input->post('jumlah-pendapatan');
+		$jumlah_pengeluaran = $this->input->post('jumlah_pengeluaran');
+		$data=array(
+			'pendapatan' => $pendapatan,
+			'pengeluaran' => $pengeluaran,
+			'jumlah_pendapatan ' => $jumlah_pendapatan,
+			'jumlah_pengeluaran' => $jumlah_pengeluaran 
+    );
+		$where=array(
+			'id_keuangan'=>$id_keuangan
+			);
+		$this->m_keuangan->updateKeuangan($where,$data,'keuangan');
+		redirect(base_url('c_keuangan/inputKeuangan'));
+   }
 
+<<<<<<< HEAD
    function edit_keuangan($id_keuangan)
 	 {
 	  $id_keuangan = base64_decode($id_keuangan);	
@@ -101,5 +126,16 @@ function inputKeuangan(){
     $this->m_keuangan->updateKeuangan($where,$data,'keuangan');
     redirect(base_url('c_keuangan/inputKeuangan'));   
   }
-  
+=======
+   public function hapus_keuangan(){
+    $where = array('id_keuangan' => $id_keuangan);
+      $this->m_keuangan->delete('keuangan',$where);
+       redirect('c_keuangan/inputKeuangan');
+    }
+
 }
+    
+
+>>>>>>> fd77b8bb2ee1e1672b1cdf021dc3ec7efc1fb514
+  
+

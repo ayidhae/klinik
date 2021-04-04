@@ -15,6 +15,7 @@ function getAllKeuangan(){
 		$query = $this->db->insert('keuangan',$data);
 		return $query;
 	}
+<<<<<<< HEAD
 	function simpan($tabel,$data)
 	{
 		$s=$this->db->insert($tabel,$data);
@@ -41,6 +42,20 @@ function getAllKeuangan(){
 
 	}
 
+=======
+	// function simpan($tabel,$data)
+	// {
+	// 	$s=$this->db->insert($tabel,$data);
+	// 	return $s;
+	// }
+	function detail($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
+	function updateKeuangan($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+>>>>>>> fd77b8bb2ee1e1672b1cdf021dc3ec7efc1fb514
 
 	function getIdKeuangan(){
 		$this->db->select('RIGHT(keuangan.id_keuangan,4) as id', FALSE);
@@ -58,5 +73,8 @@ function getAllKeuangan(){
 		  $kodejadi = "KEUANG-".$kodemax;    
 		  return $kodejadi;
 	}
-	
+	function delete($table,$where){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }
