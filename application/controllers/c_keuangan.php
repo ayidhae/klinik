@@ -65,7 +65,7 @@ function inputKeuangan(){
    public function update_Keuangan($id_keuangan){
 		$pendapatan = $this->input->post('pendapatan');
 		$pengeluaran = $this->input->post('pengeluaran');
-		$jumlah_pendapatan = $this->input->post('jumlah-pendapatan');
+		$jumlah_pendapatan = $this->input->post('jumlah_pendapatan');
 		$jumlah_pengeluaran = $this->input->post('jumlah_pengeluaran');
 		$data=array(
 			'pendapatan' => $pendapatan,
@@ -82,4 +82,3 @@ function inputKeuangan(){
 
 }
   
-

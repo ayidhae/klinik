@@ -18,6 +18,10 @@ function getAllKeuangan(){
 function detail($where,$table){     
         return $this->db->get_where($table,$where);
     }
+    function updateKeuangan($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
 	function getIdKeuangan(){
 		$this->db->select('RIGHT(keuangan.id_keuangan,4) as id', FALSE);
 		$this->db->order_by('id_keuangan','DESC');    
@@ -36,3 +40,4 @@ function detail($where,$table){
 	}
 	
 }
+

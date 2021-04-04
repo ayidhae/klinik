@@ -99,19 +99,24 @@
                 <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url(). 'c_keuangan/addKeuangan/'.$detail->id_keuangan; ?>" method="post">
+                    <form action="<?php echo base_url(). 'c_keuangan/update_keuangan/'.$detail->id_keuangan; ?>" method="post">
                       <div class="row">
                        
+
                    <div class="col-md-10">                       
+
+                        <div class="col-md-10">                       
+
                           <div class="form-group">
-                            <label class="control-label">pendapatan</label>
+                            <!-- <label class="control-label">pendapatan</label>
                             <div class="">
-                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->pendapatan ;?>" >
+                              <input class="form-control" type="text" name="pendapatan" value="<?php echo $detail->pendapatan ;?>" > -->
                             </div>
                           </div>
-                           
+                          
                            <div class="col-md-10">                       
                           <div class="form-group">
+
                             <label class="control-label">jumlah pendapatan</label>
                             <div class="">
                               <input class="form-control" type="text" name="nama" value="<?php echo $detail->jumlah_pendapatan ;?>" >
@@ -146,49 +151,37 @@
                                <div class="col-md-16">                       
                           <div class="form-group">
                             <label class="control-label">email</label>
-                            <div class="">
-                              <input class="form-control" type="text" name="email" value="<?php echo $detail->email ;?>" >
-                            </div>
-                          </div>
-                          <div class="col-md-16">                       
-                          <div class="form-group">
-                            <label class="control-label">pekerjaan</label>
-                            <div class="">
-                              <input class="form-control" type="text" name="pekerjaan" value="<?php echo $detail->pekerjaan ;?>">
-                            </div>
-                          </div>
 
-                          <div class="col-md-16">                       
-                          <div class="form-group">
-                            <label class="control-label">umur</label>
-                            <div class="">
-                              <input class="form-control" type="text" name="umur" value="<?php echo $detail->umur ;?>" >
-                            </div>
-                          </div>
-                    
-                          <div class="row">
-                        <div class="col-md-12">                       
-                          <div class="form-group">
-                           <label class="control-label">Keluhan</label>
-                            <div class="">
-                              <textarea name="keluhan" readonly="readonly"><?php echo $detail->keluhan ;?></textarea>
-                            </div>
-                            </div>
-                          <div class="row">
-                        <div class="col-md-12">                       
-                          <div class="form-group">
-                           <label class="control-label">Username</label>
-                            <div class="">
-                              <input class="form-control" rows="4" type="text" name="username" value="<?php echo $detail->username ;?>" >
-                            </div>
-                          </div>
+                            <label class="control-label">pendapatan</label>
 
-                                  <div class="row">
-                        <div class="col-md-12">                       
-                          <div class="form-group">
-                            <label class="control-label">Password</label>
                             <div class="">
-                              <input class="form-control" type="text" name="password" value="<?php echo $detail->password ;?>" >
+                              <input class="form-control" type="text" name="pendapatan" value="<?php echo $detail->pendapatan ;?>" >
+                              
+                            </div>
+                          </div>
+                          <div class="col-md-14">                       
+                          <div class="form-group">
+                             <label class="control-label">jumlah pendapatan</label>
+                            <div class="">
+                              <input class="form-control" type="" id="jumlah_pendapatan" name="jumlah_pendapatan" value="<?php echo $detail->jumlah_pendapatan ;?>" >
+
+                            
+                            </div>
+                          </div>
+                     <div class="col-md-14">                       
+                          <div class="form-group">
+                            <label class="control-label">pengeluaran</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="pengeluaran" value="<?php echo $detail->pengeluaran ;?>" >
+                            </div>
+                          </div>
+                          
+                           <div class="col-md-14">                       
+                          <div class="form-group">
+                            <label class="control-label">jumlah pengeluaran</label>
+                            <div class="">
+                              <input class="form-control" type="" id="jumlah_pengeluaran" name="jumlah_pengeluaran" value="<?php echo $detail->jumlah_pengeluaran ;?>" >
+                              
                             </div>
                           </div>
                           <div class="form-group">

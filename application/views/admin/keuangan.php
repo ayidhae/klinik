@@ -146,8 +146,8 @@
                     <th class="text-center">TANGGAL</th>
                     <th class="text-center">PENDAPATAN </th>
                     <th class="text-center">PENGELUARAN</th>
-                    <th class="text-right">JUMLAH_PENDAPATAN</th>
-                    <th class="text-right">JUMLAH_PENGELUARAN</th>
+                    <th class="text-right">JUMLAH </th>
+                    <th class="text-right">JUMLAAaH</th>
                      <th class="text-right">AKSI</th>
                   </tr>
                 </thead>
@@ -163,8 +163,9 @@
                 <td class="text-center">'.$row->tanggal.'</td>
                  <td class="text-center">'.$row->pendapatan.'</td>
                      <td class="text-center">'.$row->pengeluaran.'</td>
-                  <td class="text-center">'.$row->jumlah_pengeluaran.'</td>
+               
                    <td class="text-center">'.$row->jumlah_pendapatan.'</td>
+                      <td class="text-center">'.$row->jumlah_pengeluaran.'</td>
                     <td class="text-center">
                 <a href="'.site_url('c_keuangan/edit_keuangan/'.trim(base64_encode($row->id_keuangan),'=').'').'" class="btn btn-primary title="edit"><i class="fa fa-pencil"></i></a>
 
