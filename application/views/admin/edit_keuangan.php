@@ -66,94 +66,37 @@
             <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Treatment</a>
           </li>
           </li>  <!-- kelola pesanan dan treatment syifa -->
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('c_keuangan/inputKeuangan');?>"><i class="fa fa-home"></i> Keuangan</a>
-          </li>
-          </li>
+          <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
+              </li>
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
     <!-- Main content -->
-<<<<<<< HEAD
- <?php
-foreach($keuangan->result_array() as $row){
-  $id_keuangan = $row['id_keuangan'];
-  //$nama_pengadaan    = $row['nama_pengadaan'];
-}
-?>
-
-
-<main class="main">
-   <ol class="breadcrumb">
-      <li class="breadcrumb-item">Home</li>
-      <li class="breadcrumb-item"><a href="#">Admin</a></li>
-      <li class="breadcrumb-item active">Edit keuangan</li>
-   </ol>
-   <div class="container-fluid">
-      <div class="card card-accent-success">
-         <div class="card-header">
-      <h3 class="panel-title pull-left">
-       Edit keuangan
-      </h3>
-      <a href="<?php echo site_url('c_keuangan/viewKeuangan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>
-         </div>
-         <ul class="nav navbar-right panel_toolbox">
-         </ul>
-         <div class="card-body">
-          <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
-      <form class="form-horizontal" method="post" action="<?php echo site_url('c_keuangan/edit_keuangan');?>">
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="pendapatan">Pendapatan</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pendapatan" name="pendapatan"  value="<?php echo $detail->pe ;?>" readonly>
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="jumlah_pendapatan">Jumlah Pendapatan</label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="jumlah_pendapatan" name="jumlah_pendapatan" value="<?php echo $jumlah_pendapatan;?>" placeholder="Input jumlah_pendapatan" required>
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="pengeluaran">Pengeluaran</label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="pengeluaran" name="pengeluaran" value="<?php echo $pengeluaran;?>" placeholder="Input pengeluaran" required>
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="jumlah_pengeluaran">Jumlah Pengeluaran</label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="jumlah_pengeluaran" name="jumlah_pengeluaran" value="<?php echo $jumlah_pengeluaran;?>" placeholder="Input jumlah_pengeluaran" required>
-        </div>
-        </div>
-     
-        <div class="form-group"> 
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan </button>
- 
-        </div>
-=======
     <main class="main">
       <!-- Breadcrumb -->
    <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-        <li class="breadcrumb-item active">Edit Keuangan</li>
+        <li class="breadcrumb-item active">input pasien</li>
 
         <!-- Breadcrumb Menu-->
       </ol>
         
             <!-- /.conainer-fluid -->
-    <?php
-    if($keuangan->num_rows()>0)
-     foreach ($keuangan as $detail): ?>
+<?php foreach($keuangan as $detail): ?>
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-           <h3 class="panel-title pull-left">Edit keuangan</h3>
-            <a href="<?php echo site_url('/c_keuangan/edit_keuangan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
->>>>>>> fd77b8bb2ee1e1672b1cdf021dc3ec7efc1fb514
+           <h3 class="panel-title pull-left">Edit Keuangan</h3>
+            <a href="<?php echo site_url('/c_keuangan/inputKeuangan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
           <div class="card-body">
             <div class="row">
@@ -161,47 +104,51 @@ foreach($keuangan->result_array() as $row){
                 <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
                 <div class="panel-body">
                   <div class="form-horizontal">
-                    <form action="<?php echo base_url(). 'c_keuangan/update_Keuangan/'.$detail->id_keuangan; ?>" method="post">
+                    <form action="<?php echo base_url(). 'c_keuangan/addKeuangan/'.$detail->id_keuangan; ?>" method="post">
                       <div class="row">
                        
                         <div class="col-md-10">                       
                           <div class="form-group">
-                            <label class="control-label">Pendapatan</label>
+                            <label class="control-label">pendapatan</label>
                             <div class="">
-                              <input class="form-control" type="text" name="pendapatan" value="<?php echo $detail->pendapatan ;?>" >
+                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->pendapatan ;?>" >
                             </div>
                           </div>
+                           
+                        <div class="col-md-10">                       
+                          <div class="form-group">
+                            <label class="control-label">jumlah pendapatan</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->jumlah_pendapatan ;?>" >
+                            </div>
                           </div>
+                           
                             <div class="col-md-10">                       
                           <div class="form-group">
-                            <label class="control-label">Jumlah Pendapatan</label>
+                            <label class="control-label">pengeluaran</label>
                             <div class="">
-                              <input class="form-control" type="text" name="jumlah_pendapatan" value="<?php echo $detail->jumlah_pendapatan ;?>" >
+                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->pengeluaran ;?>" >
                             </div>
                           </div>
-                          </div>
-                               </div>
-                            <div class="col-md-10">                       
+                           
+                           <div class="col-md-10">                       
                           <div class="form-group">
-                            <label class="control-label"> Pengeluaran</label>
+                            <label class="control-label">jumlah pengeluaran</label>
                             <div class="">
-                              <input class="form-control" type="text" name="jumlah_pengeluaran" value="<?php echo $detail->pengeluaran ;?>" >
+                              <input class="form-control" type="text" name="nama" value="<?php echo $detail->jumlah_pengeluaran ;?>" >
                             </div>
                           </div>
-                          </div>
-                            <div class="col-md-10">                       
-                          <div class="form-group">
-                             <label class="control-label">Jumlah Pengeluaran</label>
-                            <div class="">
-                              <input class="form-control" type="text" name="jumlah_pengeluaran" value="<?php echo $detail->jumlah_pengeluaran ;?>" >
-                            </div>
+                    
 
                           <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> simpan </button>
-                                <a class="btn btn-danger" href="<?php echo base_url('c_keuangan/edit_keuangan')?>"><i class="fa fa-close"></i> Batal</a>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> edit</button>
+                             <!--    <a class="btn btn-danger" href="<?php echo base_url('c_user/kelola_pasien')?>"><i class="fa fa-close"></i> Batal</a> -->
                               </div>
-                            </div>                          
+                            </div>    
+                    
+
+                                                   
                             
                       <?php endforeach; ?>
                     </form>
@@ -212,8 +159,9 @@ foreach($keuangan->result_array() as $row){
               </div>
             </div>
           </div>
+      
 </main>
-</script> 
+
 </div>
 </div>
 </div>

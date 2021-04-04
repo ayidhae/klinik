@@ -79,6 +79,8 @@
       <li class="breadcrumb-item">Home</li>
       <li class="breadcrumb-item"><a href="#">Logistik</a></li>
    </ol>
+   
+
    <div class="container-fluid">
       <div class="card card-accent-success">
          <div class="card-header">
@@ -90,6 +92,7 @@
       <h3 class="panel-title pull-left">
        Insert Pendapatan dan Pengeluaran
       </h3>
+<!--       <a href="<?php echo site_url('c_pesanan/viewPesanan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a> -->
          </div>
          <ul class="nav navbar-right panel_toolbox">
          </ul>
@@ -101,6 +104,7 @@
           <input type="text" class="form-control" id="pendapatan" name="pendapatan" placeholder="keterangan" >
         </div>
         </div>
+
         <div class="form-group">
            <label class="control-label col-sm-2" for="jumlah_pendapatan">jumlah pendapatan</label>
         <div class="col-sm-10"> 
@@ -113,15 +117,20 @@
           <input type="text" class="form-control" id="pengeluaran" name="pengeluaran" placeholder="keterangan" >
         </div>
         </div>
+      
+
         <div class="form-group">
        <label class="control-label col-sm-2" for="jumlah_pengeluaran">jumlah pengeluaran</label>
         <div class="col-sm-10"> 
           <input type="text" class="form-control" id="jumlah_pengeluaran" name="jumlah_pengeluaran" placeholder="Hanya angka" >
         </div>
         </div>
+      
+     
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> simpan</button>
+       
         </div>
         </div>
       </form>
@@ -137,26 +146,16 @@
                     <th class="text-center">TANGGAL</th>
                     <th class="text-center">PENDAPATAN </th>
                     <th class="text-center">PENGELUARAN</th>
-                    <th class="text-right">JUMLAH</th>
-                    <th class="text-right">JUMLAaH</th>
-                    <th class="text-right">AKSI</th>
-                   
+                    <th class="text-right">JUMLAH PENDAPATAN</th>
+                    <th class="text-right">JUMLAH PENGELUARAN</th>
+                     <th class="text-right">AKSI</th>
                   </tr>
-                </thead> 
+                </thead>
                 <tbody>
-               
                   <?php
           if($keuangan->num_rows()>0){
             $no = 1;
             foreach ($keuangan->result() as $row) {
-<<<<<<< HEAD
-              // if($row->id_keuangan=='keuangan'){
-              //   $act='<a href="'.site_url('c_keuangan/edit_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit </i></a>';
-              // }else{
-              //   $act='<a href="#" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit<i> ';
-              // }
-=======
->>>>>>> fd77b8bb2ee1e1672b1cdf021dc3ec7efc1fb514
               echo'
               <tr>
                 <td width="5%" class="text-center">'.$no++.'</td>
@@ -164,24 +163,18 @@
                 <td class="text-center">'.$row->tanggal.'</td>
                  <td class="text-center">'.$row->pendapatan.'</td>
                      <td class="text-center">'.$row->pengeluaran.'</td>
+                             <td class="text-center">'.$row->jumlah_pendapatan.'</td>
                   <td class="text-center">'.$row->jumlah_pengeluaran.'</td>
-                   <td class="text-center">'.$row->jumlah_pendapatan.'</td>
-                   <td class="text-center">
-<<<<<<< HEAD
-                     <a href="'.site_url('c_keuangan/edit_keuangan/'.trim(base64_encode($row->id_keuangan),'=').'').'" class="btn btn-primary title="edit"><i class="fa fa-pencil"></i></a>
-  
            
+                    <td class="text-center">
+                <a href="'.site_url('c_keuangan/edit_keuangan/'.trim(base64_encode($row->id_keuangan),'=').'').'" class="btn btn-primary title="edit"><i class="fa fa-pencil"></i></a>
 
               </tr>';
-=======
-                   <a href="'.site_url('c_keuangan/edit_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit </i></a>
-                   <a href="'.site_url('c_keuangan/hapus_keuangan/').'" class="btn btn-primary"> <i class="fa fa-pencil"></i> Hapus </i></a>
-                   </tr>';
->>>>>>> fd77b8bb2ee1e1672b1cdf021dc3ec7efc1fb514
             }
           }
-          
-          ?>
+          ?> 
+      
+      
                 </tbody>
               </table>
         
@@ -197,3 +190,4 @@
     </div>
 </div>
 </div>
+<!--  <a href="#" data-href="'.site_url('c_pesanan/hapus_detail/'.trim(base64_encode($row->pesanan_id),'=').'/'.trim(base64_encode($row->detail_id),'=').'').'"  class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')"><i class="fa fa-trash-o"></i></a> -->
