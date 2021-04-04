@@ -21,7 +21,7 @@
 
   <!-- Main styles for this application -->
   <link href="<?php echo base_url('asset/css/style.css');?>" rel="stylesheet">
-
+  <link href="<?php echo base_url('asset/css/dropdown.css');?>" rel="stylesheet">
   <!-- Data Tabels -->
   <link href="<?php echo base_url('asset/dataTables/datatables.min.css');?>" rel="stylesheet">
   <link href="<?php echo base_url('asset/dataTables/DataTables-1.10.16/css/jquery.dataTables.css');?>" rel="stylesheet">

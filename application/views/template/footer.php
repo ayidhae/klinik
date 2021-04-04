@@ -21,5 +21,11 @@
 
   <script src="<?php echo base_url('asset/js/app.js');?>"></script>
 
+  <script>
+  $(document).on("click", ".open-image", function () {
+      var url = $(this).data('url');
+      document.getElementById("image-container").src = url;
+  });
+  </script>
   </body>
 </html>
