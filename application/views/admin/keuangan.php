@@ -146,8 +146,8 @@
                     <th class="text-center">TANGGAL</th>
                     <th class="text-center">PENDAPATAN </th>
                     <th class="text-center">PENGELUARAN</th>
-                    <th class="text-right">JUMLAH</th>
-                    <th class="text-right">JUMLAaH</th>
+                    <th class="text-right">JUMLAH_PENDAPATAN</th>
+                    <th class="text-right">JUMLAH_PENGELUARAN</th>
                      <th class="text-right">AKSI</th>
                   </tr>
                 </thead>

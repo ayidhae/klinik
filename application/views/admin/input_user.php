@@ -45,14 +45,9 @@
           </li>
         </li>
          <li class="nav-item nav-dropdown"> 
-          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user"></i>Kelola User</a>          
+          <a class="nav-link nav-dropdown-toggle" href="<?php echo base_url('/c_keuangan/inputKeuangan');?>"><i class="fa fa-user"></i>Kelola User</a>          
             <ul class="nav-dropdown-items">   
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_user');?>"><i class="fa fa-user"></i> User Internal</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_pasien');?>" > <i class="fa fa-user"></i> User Pasien</a> <!-- elsa -->
-              </li>
+             
         </ul>
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>

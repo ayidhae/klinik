@@ -67,14 +67,9 @@
           </li>
           </li>  <!-- kelola pesanan dan treatment syifa -->
           <li class="nav-item nav-dropdown"> 
-          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
+          <a class="nav-link nav-dropdown-toggle" href="<?php echo base_url('/c_keuangan/inputKeuangan');?>"><i class="fa fa-file"></i>Keuangan</a>          
             <ul class="nav-dropdown-items">   
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
-              </li>
+             
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
@@ -107,7 +102,7 @@
                     <form action="<?php echo base_url(). 'c_keuangan/addKeuangan/'.$detail->id_keuangan; ?>" method="post">
                       <div class="row">
                        
-      <!--                   <div class="col-md-10">                       
+                   <div class="col-md-10">                       
                           <div class="form-group">
                             <label class="control-label">pendapatan</label>
                             <div class="">
@@ -126,22 +121,22 @@
                           </div>
                             <div class="col-md-10">                       
                           <div class="form-group">
-                            <label class="control-label">alamat</label>
+                            <label class="control-label">Pengeluaran</label>
                             <div class="">
-                              <input class="form-control" type="text" name="alamat" value="<?php echo $detail->alamat ;?>" >
+                              <input class="form-control" type="text" name="pengeluaran" value="<?php echo $detail->pengeluaran ;?>" >
                             </div>
                           </div>
                           </div>
                                </div>
                             <div class="col-md-10">                       
                           <div class="form-group">
-                            <label class="control-label">alamat</label>
+                            <label class="control-label">Jumlah Pengeluaran</label>
                             <div class="">
-                              <input class="form-control" type="text" name="alamat" value="<?php echo $detail->alamat ;?>" >
+                              <input class="form-control" type="text" name="jumlah_pengeluaran" value="<?php echo $detail->jumlah_pengeluaran ;?>" >
                             </div>
                           </div>
                           </div>
-                            <div class="col-md-10">                       
+                            <!-- <div class="col-md-10">                       
                           <div class="form-group">
                              <label class="control-label">contact</label>
                             <div class="">
@@ -207,13 +202,13 @@
                               <label class="radio-inline"><input type="radio" name="status" checked="<?= $detail->status=='aktif'?'checked':'';?>" value="tidak aktif"> Tidak Aktif</input></label>                    
                             <?php } ?>                                                    
                             </div>
-                          </div> -->
+                          </div> --> 
                     
 
                           <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> edit</button>
-                                <a class="btn btn-danger" href="<?php echo base_url('c_user/kelola_pasien')?>"><i class="fa fa-close"></i> Batal</a>
+                                <a class="btn btn-danger" href="<?php echo base_url('c_keuangan/inputKeuangan')?>"><i class="fa fa-close"></i> Batal</a>
                               </div>
                             </div>    
                     

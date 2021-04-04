@@ -67,14 +67,8 @@
           </li>
           </li>  <!-- kelola pesanan dan treatment syifa -->
           <li class="nav-item nav-dropdown"> 
-          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Keuangan</a>          
-            <ul class="nav-dropdown-items">   
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pendapatan/viewPendapatan');?>"><i class="fa fa-share"></i> Pendapatan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pengeluaran/viewPengeluaran');?>" > <i class="fa fa-inbox"></i> Pengeluaran</a> <!-- elsa -->
-              </li>
+          <a class="nav-link nav-dropdown-toggle" href="<?php echo base_url('/c_keuangan/inputKeuangan');?>"><i class="fa fa-file"></i>Keuangan</a>          
+            
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
