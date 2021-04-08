@@ -29,20 +29,63 @@
         </div>
       </li>
     </ul>
+
   </header>
   <div class="app-body">
-  <?php $this->load->view("admin/sidebar.php") ?>
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_user/homeAdmin');?>"><i class="icon-speedometer"></i>Admin Dashboard </a>
+          </li>
+          <li class="nav-title">
+            Menu
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=" <?php echo base_url('/c_user/homeAdmin');?> "><i class="fa fa-home"></i> Home</a>
+          </li>
+        </li>
+         <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user"></i>Kelola User</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_user');?>"><i class="fa fa-user"></i> User Internal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_user/kelola_pasien');?>" > <i class="fa fa-user"></i> User Pasien</a> <!-- elsa -->
+              </li>
+        </ul>
+          <li class="nav-item">
+            <a class="nav-link" href=" <?php echo base_url('/c_dataPasien/inputPasien');?> "><i class="fa fa-home"></i> Kelola Data Pasien</a>
+          </li>
+          </li>  <!-- kelola user dan data pasien ayidha -->
+          <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-home"></i> Kelola Pesanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('c_kelola_treatment/inputTreatment');?>"><i class="fa fa-home"></i> Kelola Treatment</a>
+          </li>
+          </li>  <!-- kelola pesanan dan treatment syifa -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('c_keuangan/inputKeuangan');?>"><i class="fa fa-home"></i> Keuangan</a>
+          </li>
+          </li>  
+      </nav>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
     <!-- Main content -->
     <main class="main">
       <!-- Breadcrumb -->
    
-     <ol class="breadcrumb">
+      <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Admin</a></li>
         <li class="breadcrumb-item active">input Treatment</li>
 
         <!-- Breadcrumb Menu-->
       </ol>
+        <!-- Breadcrumb Menu-->
+     
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
