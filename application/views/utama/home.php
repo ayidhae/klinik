@@ -26,7 +26,7 @@
 						      <i class="fa fa-caret-down"></i>
 						    </button>
 						    <div class="dropdown-content">
-						      <a href="c_customer/add">Pasien</a>
+						      <a href="c_pasien/add">Pasien</a>
 						    </div>
 						  </div>
 						<li><a href="c_login">Login</a></li>
