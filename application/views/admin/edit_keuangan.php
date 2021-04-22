@@ -108,9 +108,9 @@
                         <div class="col-md-10">                       
 
                           <div class="form-group">
-                            <!-- <label class="control-label">pendapatan</label>
+                            <label class="control-label">pendapatan</label>
                             <div class="">
-                              <input class="form-control" type="text" name="pendapatan" value="<?php echo $detail->pendapatan ;?>" > -->
+                              <input class="form-control" type="text" name="pendapatan" value="<?php echo $detail->pendapatan ;?>" >
                             </div>
                           </div>
                           
