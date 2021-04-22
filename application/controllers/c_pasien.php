@@ -77,10 +77,12 @@ class c_pasien extends CI_Controller {
         	$this->load->view('pasien/registrasiPasien');
 		}
 		else { 
-		       				        
+
+		       			  date_default_timezone_set("Asia/Jakarta");	        
 		       		$data = array(
+						
+                         'tanggal' => date('Y-m-d h:i:s'),
 						  'hak_akses' =>'pasien',
-						 
 						 'nama' =>$this->input->post('nama'),
 						  'alamat' => $this->input->post('alamat'),
 						  'contact' => $this->input->post('contact'),
